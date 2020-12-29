@@ -61,7 +61,7 @@ const Container = styled.div<{ background: string }>`
   flex: 1 1 auto;
 
   background: linear-gradient(
-    -25deg,
+    -15deg,
     ${th.color('backgroundStart')},
     ${th.color('backgroundStop')},
     ${th.color('backgroundStopAlt')},

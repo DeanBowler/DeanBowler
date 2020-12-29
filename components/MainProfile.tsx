@@ -1,57 +1,47 @@
-import Image from 'next/image';
-
-import styled, { Box, keyframes } from '@xstyled/styled-components';
+import styled, { Box } from '@xstyled/styled-components';
 
 import { SocialLinks } from '../components/SocialLinks';
 import { Section } from '../components/Section';
+import { PreloadImage } from '../components/PreloadImage';
+import { hueCycleAnimation } from '../styled/keyframes';
 
-const ImageContainer = styled.div`
+const ProfileImage = styled.div`
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 1px 6px 20px 3px rgba(0, 0, 0, 0.35);
-`;
+  background-image: url('/me.jpg');
+  background-size: contain;
+  width: 128px;
+  height: 128px;
+  image-rendering: -webkit-optimize-contrast;
+  cursor: url('/chromatic-cursor.png'), auto;
 
-const hueCycleAnimation = keyframes`
-from {
-  filter: hue-rotate(0deg);
-}
-to {
-  filter: hue-rotate(360deg);
-}
-`;
-
-const ProfileImage = styled(Image)`
   :hover {
-    animation: ${hueCycleAnimation} 3s ease-in-out infinite;
+    background-image: url('/me-abberation.gif');
+    animation: ${hueCycleAnimation} 2s ease-in-out infinite;
   }
 `;
 
-const AboutMeContainer = styled.box`
+const AboutMeContainer = styled.div`
+  display: flex;
+  flex: 1 1 auto;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2;
+  margin-bottom: 6;
+  color: white;
   user-select: none;
 `;
 
+const PreloadHoverImage = () => <PreloadImage imageUrl="/me-abberation.gif" />;
+
 export const MainProfile = () => (
   <Section>
-    <AboutMeContainer
-      display="flex"
-      flex="1 1 auto"
-      textAlign="center"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      marginTop={2}
-      marginBottom={6}
-      color="white"
-    >
-      <ImageContainer>
-        <ProfileImage
-          src="/me.jpg"
-          alt="Picture of me"
-          width={128}
-          height={128}
-          priority={true}
-        />
-      </ImageContainer>
+    <AboutMeContainer>
+      <PreloadHoverImage />
+      <ProfileImage />
       <Box
         fontSize={{ xs: 6, sm: 8 }}
         as="h1"
