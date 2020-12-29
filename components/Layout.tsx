@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import styled, {
-  Box,
   createGlobalStyle,
   keyframes,
   th,
@@ -89,7 +88,7 @@ const Container = styled.div<{ background: string }>`
 `;
 
 export const Layout = ({ children, title = 'This is the default title' }: Props) => {
-  const [colorMode, setColorMode] = useColorMode();
+  const [colorMode] = useColorMode();
 
   return (
     <>
