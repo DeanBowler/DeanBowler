@@ -8,14 +8,20 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@xstyled/styled-components": "^v1.20.0-alpha.1",
+    "@xstyled/system": "^v1.20.0-alpha.0",
     "next": "latest",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-icons": "^4.1.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@hookydev/babel-plugin-styled-components": "^1.10.7-1",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^5.1.4",
     "typescript": "4.0"
   },
   "license": "MIT"
