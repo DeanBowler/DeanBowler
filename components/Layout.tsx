@@ -6,6 +6,7 @@ import styled, {
   th,
   useColorMode,
 } from '@xstyled/styled-components';
+import { Seo } from './Seo';
 
 type Props = {
   children?: ReactNode;
@@ -61,7 +62,7 @@ const Container = styled.div<{ background: string }>`
   flex: 1 1 auto;
 
   background: linear-gradient(
-    -15deg,
+    -25deg,
     ${th.color('backgroundStart')},
     ${th.color('backgroundStop')},
     ${th.color('backgroundStopAlt')},
@@ -73,7 +74,7 @@ const Container = styled.div<{ background: string }>`
   font-family: ${th.font('normal')}, 'Helvetica Neue', sans-serif;
   color: text;
 
-  animation: ${gradientShift} 20s ease infinite forwards;
+  animation: ${gradientShift} 30s ease infinite forwards;
 
   ::before {
     content: '';
@@ -87,7 +88,7 @@ const Container = styled.div<{ background: string }>`
   }
 `;
 
-export const Layout = ({ children, title = 'This is the default title' }: Props) => {
+export const Layout = ({ children, title = 'Dean Bowler' }: Props) => {
   const [colorMode] = useColorMode();
 
   return (
@@ -104,6 +105,7 @@ export const Layout = ({ children, title = 'This is the default title' }: Props)
             rel="stylesheet"
           />
         </Head>
+        <Seo title={title} />
         <header></header>
         {children}
         <footer></footer>

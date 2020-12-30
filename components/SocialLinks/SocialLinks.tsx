@@ -8,6 +8,7 @@ import { ABBERATION_FILTER } from '../SvgFilters';
 interface SocialLinkProps {
   icon: IconType;
   link: string;
+  label: string;
   className?: string;
 }
 
@@ -27,8 +28,8 @@ const LinkContainer = styled.a`
   }
 `;
 
-const SocialLink = ({ icon: SocialIcon, link, className }: SocialLinkProps) => (
-  <LinkContainer as="a" href={link} className={className}>
+const SocialLink = ({ icon: SocialIcon, link, label, className }: SocialLinkProps) => (
+  <LinkContainer href={link} className={className} aria-label={label}>
     <SocialIcon size="2rem" />
   </LinkContainer>
 );
@@ -36,12 +37,17 @@ const SocialLink = ({ icon: SocialIcon, link, className }: SocialLinkProps) => (
 export const SocialLinks = () => (
   <Box margin={4}>
     <Spaced mx={1}>
-      <SocialLink icon={FiGithub} link="https://github.com/DeanBowler" />
+      <SocialLink icon={FiGithub} label="GitHub" link="https://github.com/DeanBowler" />
       <SocialLink
         icon={FiLinkedin}
+        label="LinkedIn"
         link="https://www.linkedin.com/in/dean-bowler-875a7323"
       />
-      <SocialLink icon={FiTwitter} link="https://twitter.com/SpencerBatwick" />
+      <SocialLink
+        icon={FiTwitter}
+        label="Twitter"
+        link="https://twitter.com/SpencerBatwick"
+      />
     </Spaced>
   </Box>
 );

@@ -3,7 +3,7 @@ import { MainProfile } from '../components/MainProfile';
 
 export default function IndexPage() {
   return (
-    <Layout title="Dean Bowler - About me">
+    <Layout title="About me - Dean Bowler">
       <MainProfile />
     </Layout>
   );
