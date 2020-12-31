@@ -11,7 +11,7 @@ const ProfileImageContainer = styled.div`
   box-shadow: 1px 6px 20px 3px rgba(0, 0, 0, 0.35);
   width: 128px;
   height: 128px;
-  cursor: url('/chromatic-cursor.png'), auto;
+  cursor: url('/images/chromatic-cursor.png'), auto;
 
   :hover {
     animation: ${hueCycleAnimation} 2s ease-in-out infinite;
@@ -35,7 +35,7 @@ export const MainProfile = () => (
   <Section>
     <AboutMeContainer>
       <ProfileImageContainer>
-        <Image src="/me.jpg" width="128" height="128" alt="Profile Picture" />
+        <Image src="/images/me.jpg" width="128" height="128" alt="Profile Picture" />
       </ProfileImageContainer>
       <Box
         fontSize={{ xs: 6, sm: 8 }}
