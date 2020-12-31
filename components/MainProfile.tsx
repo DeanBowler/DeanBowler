@@ -35,7 +35,14 @@ export const MainProfile = () => (
   <Section>
     <AboutMeContainer>
       <ProfileImageContainer>
-        <Image src="/images/me.jpg" width="128" height="128" alt="Profile Picture" />
+        <Image
+          src="/images/me.jpg"
+          width="128"
+          height="128"
+          alt="Profile Picture"
+          priority={true}
+          loading="eager"
+        />
       </ProfileImageContainer>
       <Box
         fontSize={{ xs: 6, sm: 8 }}
