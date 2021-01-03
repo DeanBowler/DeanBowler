@@ -7,9 +7,7 @@ interface Colors {
   white: string;
   black: string;
   text: string;
-  backgroundStart: string;
-  backgroundStop: string;
-  backgroundStopAlt: string;
+  background: string;
 }
 
 type ColorMode = 'dark';
@@ -31,7 +29,6 @@ export interface AppTheme extends Theme {
 }
 
 const theme: Partial<AppTheme> = {
-  defaultColorModeName: 'dark',
   images: {
     background: '/background.svg',
     modes: {
@@ -42,18 +39,14 @@ const theme: Partial<AppTheme> = {
   },
   colors: {
     primary: '#47ae75',
-    white: '#eaeded',
+    white: '#f9fafa',
     black: '#333333',
-    text: 'black',
-    backgroundStart: '#31364e',
-    backgroundStop: '#5a3636',
-    backgroundStopAlt: '#5a3c58',
+    text: '#333333',
+    background: '#f9fafa',
     modes: {
       dark: {
-        text: 'white',
-        backgroundStart: '#31364e',
-        backgroundStop: '#5a3636',
-        backgroundStopAlt: '#5a3c58',
+        text: '#eaeded',
+        background: '#333333',
       },
     },
   },

@@ -61,18 +61,9 @@ const Container = styled.div<{ background: string }>`
   flex-direction: column;
   flex: 1 1 auto;
 
-  background: linear-gradient(
-    -25deg,
-    ${th.color('backgroundStart')},
-    ${th.color('backgroundStop')},
-    ${th.color('backgroundStopAlt')},
-    ${th.color('backgroundStop')},
-    ${th.color('backgroundStart')}
-  );
-  background-size: 500% 500%;
-
   font-family: ${th.font('normal')}, 'Helvetica Neue', sans-serif;
   color: text;
+  background-color: ${th.color('background')};
 
   animation: ${gradientShift} 30s ease infinite forwards;
 

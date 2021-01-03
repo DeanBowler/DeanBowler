@@ -2,7 +2,7 @@ import styled, { Box } from '@xstyled/styled-components';
 import Image from 'next/image';
 
 import { SocialLinks } from '../components/SocialLinks';
-import { Section } from '../components/Section';
+import { HeadingSection } from '../components/HeadingSection';
 import { hueCycleAnimation } from '../styled/keyframes';
 
 const ProfileImageContainer = styled.div`
@@ -31,33 +31,35 @@ const AboutMeContainer = styled.div`
   user-select: none;
 `;
 
-export const MainProfile = () => (
-  <Section>
-    <AboutMeContainer>
-      <ProfileImageContainer>
-        <Image
-          src="/images/me.jpg"
-          width="128"
-          height="128"
-          alt="Profile Picture"
-          priority={true}
-          loading="eager"
-        />
-      </ProfileImageContainer>
-      <Box
-        fontSize={{ xs: 6, sm: 8 }}
-        as="h1"
-        fontWeight="lighter"
-        margin={0}
-        marginTop={3}
-        lineHeight="solid"
-      >
-        Dean Bowler
-      </Box>
-      <Box fontSize={{ xs: 4, sm: 5 }} fontWeight="normal">
-        Web Developer
-      </Box>
-      <SocialLinks />
-    </AboutMeContainer>
-  </Section>
-);
+export const MainProfile = () => {
+  return (
+    <HeadingSection fullHeight={true}>
+      <AboutMeContainer>
+        <ProfileImageContainer>
+          <Image
+            src="/images/me.jpg"
+            width="128"
+            height="128"
+            alt="Profile Picture"
+            priority={true}
+            loading="eager"
+          />
+        </ProfileImageContainer>
+        <Box
+          as="h1"
+          fontSize={{ xs: 6, sm: 8 }}
+          fontWeight="lighter"
+          margin={0}
+          marginTop={3}
+          lineHeight="solid"
+        >
+          Dean Bowler
+        </Box>
+        <Box fontSize={{ xs: 4, sm: 5 }} fontWeight="normal">
+          Web Developer
+        </Box>
+        <SocialLinks />
+      </AboutMeContainer>
+    </HeadingSection>
+  );
+};
