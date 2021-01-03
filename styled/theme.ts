@@ -4,6 +4,7 @@ import { SystemProperty, Theme } from '@xstyled/system';
 
 interface Colors {
   primary: string;
+  secondary: string;
   white: string;
   black: string;
   text: string;
@@ -38,7 +39,8 @@ const theme: Partial<AppTheme> = {
     },
   },
   colors: {
-    primary: '#47ae75',
+    primary: 'hsl(150, 30%, 50%)',
+    secondary: 'hsl(300, 20%, 50%)',
     white: '#f9fafa',
     black: '#333333',
     text: '#333333',
