@@ -7,6 +7,7 @@ import styled, {
   useColorMode,
 } from '@xstyled/styled-components';
 import { Seo } from './Seo';
+import { SiteHeader } from './SiteHeader';
 
 type Props = {
   children?: ReactNode;
@@ -67,9 +68,13 @@ const Container = styled.div<{ background: string }>`
 
   animation: ${gradientShift} 30s ease infinite forwards;
 
+  z-index: 0;
+
   ::before {
     content: '';
+    z-index: -1;
     background-image: url(${p => p.background});
+    background-attachment: fixed;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -98,7 +103,7 @@ export const Layout = ({ children, title = 'Dean Bowler' }: Props) => {
           />
         </Head>
         <Seo title={title} />
-        <header></header>
+        <SiteHeader />
         {children}
         <footer></footer>
       </Container>

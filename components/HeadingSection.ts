@@ -31,12 +31,16 @@ export const HeadingSection = styled(Section)`
 
   animation: ${gradientShift} 30s ease infinite forwards;
 
+  padding-top: ${th.space(4)};
+  min-height: ${p => (p.fullHeight ? `calc(100vh - ${th.space(4)(p)})` : 'inherit')};
+
   color: ${th.color('white')};
 
   ::before {
     content: '';
-    background-image: url('/background-inverse.svg');
-    position: fixed;
+    background-image: url(/background-header.svg);
+    background-attachment: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;

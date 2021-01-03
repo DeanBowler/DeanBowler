@@ -43,7 +43,7 @@ const theme: Partial<AppTheme> = {
     secondary: 'hsl(300, 20%, 50%)',
     white: '#f9fafa',
     black: '#333333',
-    text: '#333333',
+    text: '#000000',
     background: '#f9fafa',
     modes: {
       dark: {
