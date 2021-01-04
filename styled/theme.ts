@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-import { SystemProperty, Theme, defaultTheme } from '@xstyled/system';
+import { Theme, defaultTheme } from '@xstyled/system';
 
 interface Colors {
   primary: string;
@@ -26,19 +26,10 @@ export interface AppTheme extends Theme {
     normal: number;
     heavy: number;
   };
-  menu: { margin: SystemProperty<number, AppTheme> };
 }
 
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
-  images: {
-    background: '/background.svg',
-    modes: {
-      dark: {
-        background: '/background-inverse.svg',
-      },
-    },
-  },
   colors: {
     primary: 'hsl(150, 30%, 50%)',
     secondary: 'hsl(300, 20%, 55%)',
@@ -83,7 +74,6 @@ const theme: Partial<AppTheme> = {
   ],
   space: [0, 4, 8, 16, 24, 48, 96, 144, 192, 240],
   screens: { xs: 0, sm: 576, md: 768, lg: 992, xl: 1200 },
-  menu: { margin: 2 },
 };
 
 export default theme as DefaultTheme;
