@@ -2,8 +2,8 @@ import styled, { Box } from '@xstyled/styled-components';
 import React from 'react';
 import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { IconType } from 'react-icons/lib';
-import Spaced from '../../styled/Spaced';
-import { ABBERATION_FILTER } from '../SvgFilters';
+import Spaced from '@/styled/Spaced';
+import { ABBERATION_FILTER } from '@/components/SvgFilters';
 
 interface SocialLinkProps {
   icon: IconType;

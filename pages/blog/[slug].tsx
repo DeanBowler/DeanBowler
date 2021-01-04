@@ -4,14 +4,14 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-
-import { Layout } from '../../components/Layout';
-import { getAllPosts, getPostBySlug, PostProps } from '../../lib/posts';
 import { Box } from '@xstyled/styled-components';
-import { HeadingSection } from '../../components/HeadingSection';
 import { formatRelative } from 'date-fns';
-import { Tag } from '../../components/Tag';
-import Spaced from '../../styled/Spaced';
+
+import Spaced from '@/styled/Spaced';
+import { getAllPosts, getPostBySlug, PostProps } from '@/lib/posts';
+import { Layout } from '@/components/Layout';
+import { HeadingSection } from '@/components/HeadingSection';
+import { Tag } from '@/components/Tag';
 
 interface BlogStaticProps {
   post: PostProps;

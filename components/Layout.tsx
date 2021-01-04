@@ -9,7 +9,7 @@ import styled, {
 } from '@xstyled/styled-components';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
-import Spaced from '../styled/Spaced';
+import Spaced from '@/styled/Spaced';
 import { Seo } from './Seo';
 import { SiteHeader } from './SiteHeader';
 

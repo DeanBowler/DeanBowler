@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Box, x } from '@xstyled/styled-components';
-import { HeadingSection } from '../../components/HeadingSection';
-import { Layout } from '../../components/Layout';
-import { getAllPosts, PostProps } from '../../lib/posts';
-import { PostPreview } from '../../components/PostPreview';
-import Spaced from '../../styled/Spaced';
+import { HeadingSection } from '@/components/HeadingSection';
+import { Layout } from '@/components/Layout';
+import { getAllPosts, PostProps } from '@/lib/posts';
+import { PostPreview } from '@/components/PostPreview';
+import Spaced from '@/styled/Spaced';
 
 interface BlogIndexProps {
   allPosts: readonly PostProps[];

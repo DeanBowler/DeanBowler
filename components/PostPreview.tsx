@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { Box } from '@xstyled/styled-components';
 import Link from 'next/link';
-import { PostProps } from '../lib/posts';
-import Spaced from '../styled/Spaced';
+import { PostProps } from '@/lib/posts';
+import Spaced from '@/styled/Spaced';
 import { Tag } from './Tag';
 
 interface PostPreviewProps extends PostProps {

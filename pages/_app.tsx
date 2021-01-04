@@ -5,8 +5,8 @@ import { AppInitialProps } from 'next/app';
 import { useRouter } from 'next/router';
 
 import { ColorModeProvider, ThemeProvider } from '@xstyled/styled-components';
-import theme from '../styled/theme';
-import { SvgFilterDefinitions } from '../components/SvgFilters';
+import theme from '@/styled/theme';
+import { SvgFilterDefinitions } from '@/components/SvgFilters';
 
 export default function App({
   Component,

@@ -1,9 +1,9 @@
 import styled, { Box } from '@xstyled/styled-components';
 import Image from 'next/image';
 
-import { SocialLinks } from '../components/SocialLinks';
-import { HeadingSection } from '../components/HeadingSection';
-import { hueCycleAnimation } from '../styled/keyframes';
+import { SocialLinks } from '@/components/SocialLinks';
+import { HeadingSection } from '@/components/HeadingSection';
+import { hueCycleAnimation } from '@/styled/keyframes';
 
 const ProfileImageContainer = styled.div`
   border-radius: 50%;
