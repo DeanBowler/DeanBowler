@@ -13,7 +13,7 @@ interface BlogIndexProps {
 
 export default function BlogIndex({ allPosts }: BlogIndexProps) {
   return (
-    <Layout>
+    <Layout title="Blog | Dean Bowler">
       <HeadingSection>
         <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
           <Box col={{ sm: 3 / 4, md: 2 / 3 }}>

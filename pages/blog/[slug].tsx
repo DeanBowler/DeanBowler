@@ -62,7 +62,7 @@ const renderers = {
 
 export default function PostTemplate({ post }: BlogStaticProps) {
   return (
-    <Layout>
+    <Layout title={post.title}>
       <article>
         <HeadingSection>
           <Box as="header" row justifyContent={{ sm: 'center' }} my={6} mx={4}>
@@ -107,7 +107,7 @@ export default function PostTemplate({ post }: BlogStaticProps) {
                   />
                 </Box>
               )}
-              <Box col={1} fontSize={'lg'}>
+              <Box col={1} fontSize={'lg'} lineHeight="copy">
                 <ReactMarkdown renderers={renderers}>{post.content}</ReactMarkdown>
               </Box>
             </Box>
