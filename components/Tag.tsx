@@ -7,7 +7,7 @@ interface TagProps {
 
 const TagContainer = styled.box`
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   padding: 2 3;
   color: white;
 `;

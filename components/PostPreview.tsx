@@ -11,18 +11,19 @@ interface PostPreviewProps extends PostProps {
 
 const StyledLink = styled.aBox`
   text-decoration: none;
-  color: primary;
+  color: text;
 
   &:visited {
-    color: secondary;
+    color: text;
   }
 `;
 
 export function PostPreview({
   title,
-  description,
+  summary,
   tags,
   slug,
+  readingTime,
   className,
 }: PostPreviewProps) {
   return (
@@ -35,7 +36,8 @@ export function PostPreview({
             </Box>
           </StyledLink>
         </Link>
-        <Box>{description}</Box>
+        <Box>{summary}</Box>
+        <Box opacity={0.8}>{readingTime}</Box>
         <Box display="flex" alignItems="baseline" flexWrap="wrap">
           <Spaced mr={2} mb={2}>
             {tags?.length && tags.map(t => <Tag key={t}>{t}</Tag>)}

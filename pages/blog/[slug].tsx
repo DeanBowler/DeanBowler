@@ -81,7 +81,10 @@ export default function PostTemplate({ post }: BlogStaticProps) {
                     {post.subtitle}
                   </Box>
                 )}
-                <Box fontSize="lg">{formatRelative(new Date(post.date), new Date())}</Box>
+                <Box row fontSize="lg" justifyContent="space-between">
+                  <Box>{formatRelative(new Date(post.date), new Date())}</Box>
+                  <Box opacity={0.75}>{post.readingTime}</Box>
+                </Box>
                 <Box display="flex" alignItems="baseline" flexWrap="wrap">
                   <Spaced mr={2} mb={2}>
                     {post.tags?.length && post.tags.map(t => <Tag key={t}>{t}</Tag>)}

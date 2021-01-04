@@ -1,7 +1,7 @@
 ---
 title: 'How to poo your pants on a train without being caught'
 subtitle: "Yes I've had to do this before"
-description: "Something which I've had to employ in the past, and you may find useful in the future!"
+summary: "Something which I've had to employ in the past, and you may find useful in the future!"
 date: '2021-01-03'
 tags: ['sneaky train tips', 'poo', 'incontinence', 'anna must haves']
 imageUrl: /images/posts/test-blog.jpg
