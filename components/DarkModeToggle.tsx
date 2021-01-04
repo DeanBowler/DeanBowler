@@ -18,9 +18,8 @@ export function DarkModeToggle() {
       focusOutline="none"
       cursor="pointer"
       hoverOpacity={1}
-      transition
     >
-      {colorMode === 'dark' ? <FiSun /> : <FiMoon />}
+      {colorMode === 'dark' ? <FiMoon /> : <FiSun />}
     </x.button>
   );
 }

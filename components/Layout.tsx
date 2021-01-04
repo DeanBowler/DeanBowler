@@ -5,13 +5,18 @@ import styled, {
   keyframes,
   th,
   useColorMode,
+  x,
 } from '@xstyled/styled-components';
+import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
+
+import Spaced from '../styled/Spaced';
 import { Seo } from './Seo';
 import { SiteHeader } from './SiteHeader';
 
 type Props = {
   children?: ReactNode;
   title?: string;
+  includeFooter?: boolean;
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -84,7 +89,11 @@ const Container = styled.div<{ background: string }>`
   }
 `;
 
-export const Layout = ({ children, title = 'Dean Bowler' }: Props) => {
+export const Layout = ({
+  children,
+  title = 'Dean Bowler',
+  includeFooter = true,
+}: Props) => {
   const [colorMode] = useColorMode();
 
   return (
@@ -105,7 +114,49 @@ export const Layout = ({ children, title = 'Dean Bowler' }: Props) => {
         <Seo title={title} />
         <SiteHeader />
         {children}
-        <footer></footer>
+        {includeFooter && (
+          <x.footer
+            row
+            my={3}
+            mx={{ xs: 4, md: 6 }}
+            justifyContent="space-between"
+            alignItems="center"
+            color="text"
+          >
+            <x.span>Dean Bowler © 2020</x.span>
+            <x.div fontSize="2xl">
+              <Spaced mx={2}>
+                <x.a
+                  color="text"
+                  aria-label="GitHub"
+                  href="https://github.com/DeanBowler"
+                  opacity={0.7}
+                  hoverOpacity={1}
+                >
+                  <SiGithub />
+                </x.a>
+                <x.a
+                  color="text"
+                  aria-label="LinkedIn"
+                  href="https://www.linkedin.com/in/dean-bowler-875a7323"
+                  opacity={0.7}
+                  hoverOpacity={1}
+                >
+                  <SiLinkedin />
+                </x.a>
+                <x.a
+                  color="text"
+                  aria-label="Twitter"
+                  href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
+                  opacity={0.7}
+                  hoverOpacity={1}
+                >
+                  <SiTwitter />
+                </x.a>
+              </Spaced>
+            </x.div>
+          </x.footer>
+        )}
       </Container>
       <GlobalStyle />
     </>

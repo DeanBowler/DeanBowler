@@ -81,9 +81,7 @@ export default function PostTemplate({ post }: BlogStaticProps) {
                     {post.subtitle}
                   </Box>
                 )}
-                <Box fontSize="lg" textTransform="">
-                  {formatRelative(new Date(post.date), new Date())}
-                </Box>
+                <Box fontSize="lg">{formatRelative(new Date(post.date), new Date())}</Box>
                 <Box display="flex" alignItems="baseline" flexWrap="wrap">
                   <Spaced mr={2} mb={2}>
                     {post.tags?.length && post.tags.map(t => <Tag key={t}>{t}</Tag>)}
