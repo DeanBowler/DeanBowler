@@ -37,10 +37,10 @@ export function SiteHeader() {
       {process.env.NODE_ENV === 'development' && (
         <Box px={3}>
           <Link href="/" passHref>
-            <StyledLink fontSize={{ xs: 'lg', md: 'xl', xl: '2xl' }}>About</StyledLink>
+            <StyledLink fontSize={{ xs: 'lg', md: 'xl' }}>About</StyledLink>
           </Link>
           <Link href="/blog" passHref>
-            <StyledLink fontSize={{ xs: 'lg', md: 'xl', xl: '2xl' }} mx={4}>
+            <StyledLink fontSize={{ xs: 'lg', md: 'xl' }} mx={4}>
               Blog
             </StyledLink>
           </Link>
