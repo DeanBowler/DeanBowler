@@ -10,11 +10,12 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@xstyled/styled-components": "^v1.20.0-alpha.1",
-    "@xstyled/system": "^v1.20.0-alpha.0",
+    "@xstyled/styled-components": "^2.0.0",
+    "@xstyled/system": "^2.0.0",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "latest",
+    "polished": "^4.0.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^4.1.0",

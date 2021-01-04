@@ -22,7 +22,7 @@ const Header = styled.headerBox`
 const StyledLink = styled.aBox`
   color: ${th.color('white')};
   text-decoration: none;
-  opacity: 0.75;
+  opacity: 0.85;
 
   :hover {
     opacity: 1;
@@ -37,10 +37,10 @@ export function SiteHeader() {
       {process.env.NODE_ENV === 'development' && (
         <Box px={3}>
           <Link href="/" passHref>
-            <StyledLink fontSize={{ xs: 3, md: 4 }}>About</StyledLink>
+            <StyledLink fontSize={{ xs: 'lg', md: 'xl', xl: '2xl' }}>About</StyledLink>
           </Link>
           <Link href="/blog" passHref>
-            <StyledLink fontSize={{ xs: 3, md: 4 }} mx={4}>
+            <StyledLink fontSize={{ xs: 'lg', md: 'xl', xl: '2xl' }} mx={4}>
               Blog
             </StyledLink>
           </Link>

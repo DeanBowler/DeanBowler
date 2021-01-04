@@ -132,7 +132,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.7.tgz#fee7b39fe809d0e73e5b25eecaf5780ef3d73056"
   integrity sha512-oWR02Ubp4xTLCAqPRiNIuMVgNO5Aif/xpXtabhzW2HWUD47XJsAB4Zd/Rg30+XeQA3juXigV7hlquOTmwqLiwg==
 
-"@babel/runtime@7.12.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.3.1":
+"@babel/runtime@7.12.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -605,37 +605,37 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@xstyled/core@^1.20.0-alpha.0":
-  version "1.20.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-1.20.0-alpha.0.tgz#d981853082f4efb5555159828c5bb6ad332f6149"
-  integrity sha512-HloqEv5OecG0gjZsKv0FwAIIWnv+DVFtU/pUnJTFx5vH/Tl6pDMSsS97e5OVrmas2AF6WS8QpAaDhK6hbSWGmg==
+"@xstyled/core@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-2.0.0.tgz#f54f8e0144e043368406212ee8db26b480b309cf"
+  integrity sha512-DG0sbwMUhGqVMzDAmLO6JaIaP3o22v9NA/JtO1qTVlTjbVkprBT/D9fT3qggQaU60NS96Ogyb8Qkm3Uck80ZcQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
-    "@xstyled/system" "^1.20.0-alpha.0"
+    "@xstyled/system" "^2.0.0"
 
-"@xstyled/styled-components@^v1.20.0-alpha.1":
-  version "1.20.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-1.20.0-alpha.1.tgz#9a7f565b8a7d00d6b8071d2a074fade0e8744e7b"
-  integrity sha512-ppoqJ9a54jYcODPPxrAVgg+ntUUsGCHItTm0UhVaEcnswmX/64JHYFwTJ+GAhxVO6Xq/r941+qE8jTHWxS3mDA==
+"@xstyled/styled-components@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-2.0.0.tgz#3a4a1b14fd62c75a49a124bb00f283c2553b6a22"
+  integrity sha512-RZN+zFcLct/q6QZOHdfZ6U9SVlSYGtBqRFDUzeHx/TX/UczX3/uA+ZEMDe9IDb2JbkELfKWvKMJlUdSAfNJ4ZQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
-    "@xstyled/core" "^1.20.0-alpha.0"
-    "@xstyled/system" "^1.20.0-alpha.0"
-    "@xstyled/util" "^1.20.0-alpha.0"
+    "@xstyled/core" "^2.0.0"
+    "@xstyled/system" "^2.0.0"
+    "@xstyled/util" "^2.0.0"
 
-"@xstyled/system@^1.20.0-alpha.0", "@xstyled/system@^v1.20.0-alpha.0":
-  version "1.20.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-1.20.0-alpha.0.tgz#2377d361b4c4dd012fd05d21c6a6c82a732ed264"
-  integrity sha512-i8jzG51VMdlE3n/8YaS/ONvqOYRzb/lzzZMqXDQX1hIzUmYWX4YPxxWGJGsAIeKyMhdX7gkvJYE4E21RBzSwiA==
+"@xstyled/system@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-2.0.0.tgz#7a16716a7acd3d5a90d29868d673a5f8e255be89"
+  integrity sha512-dQnlX0m6oMUd+P7FfR82HmOjhl+mLAnPb9xwsyLozRalgtqXwMkLnmeb9KeClCaWRUyLvzqQvaWgnLC6G6wKMA==
   dependencies:
     "@babel/runtime" "^7.11.2"
-    "@xstyled/util" "^1.20.0-alpha.0"
+    "@xstyled/util" "^2.0.0"
     csstype "^3.0.3 "
 
-"@xstyled/util@^1.20.0-alpha.0":
-  version "1.20.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-1.20.0-alpha.0.tgz#dbbdb0396b558ef2f457e8be28034e0673093123"
-  integrity sha512-frG2FrsluwFH18YaOro9DaxiEvsxcmFqVC9kaUNJUF2ZnSULeqeG9xy/TL5I0g4fVjHd0UUhzkS5jXkYBKrQwQ==
+"@xstyled/util@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-2.0.0.tgz#009c5b629ce3553b13178ffa6b99ab32d5fd2478"
+  integrity sha512-OFOflJVEEBYppcgN4Seff4x4s61S8f5oHX4HBZDnq6tim/XqvRDHjbac5A7P8fPoa9v5PBrJw2JrVyMsTGCiZQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
 
@@ -3955,6 +3955,13 @@ pnp-webpack-plugin@1.6.4:
   integrity sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
   dependencies:
     ts-pnp "^1.1.6"
+
+polished@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-4.0.5.tgz#3f91873c8f72dec1723b3f892f57fbb22645b23d"
+  integrity sha512-BY2+LVtOHQWBQpGN4GPAKpCdsBePOdSdHTpZegRDRCrvGPkRPTx1DEC+vGjIDPhXS7W2qiBxschnwRWTFdMZag==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

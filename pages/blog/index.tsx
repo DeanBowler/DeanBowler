@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box } from '@xstyled/styled-components';
+import { Box, x } from '@xstyled/styled-components';
 import { HeadingSection } from '../../components/HeadingSection';
 import { Layout } from '../../components/Layout';
 import { getAllPosts, PostProps } from '../../lib/posts';
@@ -17,15 +17,15 @@ export default function BlogIndex({ allPosts }: BlogIndexProps) {
       <HeadingSection>
         <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
           <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
-            <Box as="h1" fontWeight="lighter" fontSize={{ xs: 6, sm: 8 }}>
+            <x.h1 fontWeight="lighter" fontSize={{ xs: '5xl', sm: '6xl' }}>
               Blog
-            </Box>
+            </x.h1>
           </Box>
         </Box>
       </HeadingSection>
       <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
         <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
-          <Box as="h2" fontWeight="normal" fontSize={{ xs: 5, sm: 6 }}>
+          <Box as="h2" fontWeight="normal" fontSize={{ xs: '3xl', sm: '4xl' }}>
             Posts
           </Box>
           <Spaced my={4}>

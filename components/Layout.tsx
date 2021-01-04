@@ -64,7 +64,7 @@ const Container = styled.div<{ background: string }>`
 
   font-family: ${th.font('normal')}, 'Helvetica Neue', sans-serif;
   color: text;
-  background-color: ${th.color('background')};
+  background-color: background;
 
   animation: ${gradientShift} 30s ease infinite forwards;
 

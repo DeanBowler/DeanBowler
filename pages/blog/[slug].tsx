@@ -40,7 +40,7 @@ const renderers = {
   },
   code: ({ language, value }: { language: string; value: string }) => {
     return (
-      <Box fontSize={3} overflow="auto">
+      <Box fontSize="md" overflow="auto">
         <SyntaxHighlighter
           style={atomOneDark}
           customStyle={{ padding: '1rem', borderRadius: '0.5rem' }}
@@ -68,7 +68,7 @@ export default function PostTemplate({ post }: BlogStaticProps) {
           <Box as="header" row justifyContent={{ sm: 'center' }} my={6} mx={4}>
             <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
               <Spaced my={3}>
-                <Box as="h1" fontWeight="lighter" fontSize={{ xs: 6, md: 7 }}>
+                <Box as="h1" fontWeight="lighter" fontSize={{ xs: '4xl', sm: '5xl' }}>
                   {post.title}
                 </Box>
                 {post.subtitle && (
@@ -76,12 +76,14 @@ export default function PostTemplate({ post }: BlogStaticProps) {
                     as="h2"
                     opacity={0.75}
                     fontWeight="normal"
-                    fontSize={{ xs: 4, md: 5 }}
+                    fontSize={{ xs: 'xl', sm: '2xl' }}
                   >
                     {post.subtitle}
                   </Box>
                 )}
-                <Box fontSize={4}>{formatRelative(new Date(post.date), new Date())}</Box>
+                <Box fontSize="lg" textTransform="">
+                  {formatRelative(new Date(post.date), new Date())}
+                </Box>
                 <Box display="flex" alignItems="baseline" flexWrap="wrap">
                   <Spaced mr={2} mb={2}>
                     {post.tags?.length && post.tags.map(t => <Tag key={t}>{t}</Tag>)}
@@ -105,7 +107,7 @@ export default function PostTemplate({ post }: BlogStaticProps) {
                   />
                 </Box>
               )}
-              <Box col={1} fontSize={4}>
+              <Box col={1} fontSize={'lg'}>
                 <ReactMarkdown renderers={renderers}>{post.content}</ReactMarkdown>
               </Box>
             </Box>

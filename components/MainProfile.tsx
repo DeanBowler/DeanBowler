@@ -47,7 +47,7 @@ export const MainProfile = () => {
         </ProfileImageContainer>
         <Box
           as="h1"
-          fontSize={{ xs: 6, sm: 8 }}
+          fontSize={{ xs: '4xl', sm: '6xl' }}
           fontWeight="lighter"
           margin={0}
           marginTop={3}
@@ -55,7 +55,7 @@ export const MainProfile = () => {
         >
           Dean Bowler
         </Box>
-        <Box fontSize={{ xs: 4, sm: 5 }} fontWeight="normal">
+        <Box fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
           Web Developer
         </Box>
         <SocialLinks />
