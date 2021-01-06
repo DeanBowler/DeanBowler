@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://deanbowler.dev/sitemap.xml
