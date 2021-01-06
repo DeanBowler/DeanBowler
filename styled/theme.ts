@@ -56,9 +56,10 @@ const theme: Partial<AppTheme> = {
     heavy: 700,
   },
   lineHeights: {
-    solid: '1em',
-    title: '1.25em',
-    copy: '1.5em',
+    normal: 'normal',
+    solid: '1',
+    title: '1.25',
+    copy: '1.7',
   },
   sizes: [
     0,

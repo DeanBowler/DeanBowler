@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { Box } from '@xstyled/styled-components';
+import { x } from '@xstyled/styled-components';
 import { formatRelative } from 'date-fns';
 
 import Spaced from '@/styled/Spaced';
@@ -19,7 +19,7 @@ interface BlogStaticProps {
 
 const renderers = {
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <Box
+    <x.div
       as="blockquote"
       marginLeft={0}
       paddingLeft={3}
@@ -28,22 +28,25 @@ const renderers = {
       fontStyle="italic"
     >
       {children}
-    </Box>
+    </x.div>
   ),
   heading: ({ children, level }: { level: number; children: React.ReactNode }) => {
     const levelString = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     return (
-      <Box as={levelString} mt={level === 2 ? 6 : 4}>
+      <x.div as={levelString} mt={level === 2 ? 5 : 4} mb={0}>
         {children}
-      </Box>
+      </x.div>
     );
   },
   code: ({ language, value }: { language: string; value: string }) => {
     return (
-      <Box fontSize="md" overflow="auto">
+      <x.div overflow="auto" mx={-2}>
         <SyntaxHighlighter
           style={atomOneDark}
-          customStyle={{ padding: '1rem', borderRadius: '0.5rem' }}
+          customStyle={{
+            padding: '1rem',
+            borderRadius: '0.5rem',
+          }}
           language={language}
           showLineNumbers={true}
           lineNumberStyle={{
@@ -55,7 +58,7 @@ const renderers = {
         >
           {value}
         </SyntaxHighlighter>
-      </Box>
+      </x.div>
     );
   },
 };
@@ -63,58 +66,57 @@ const renderers = {
 export default function PostTemplate({ post }: BlogStaticProps) {
   return (
     <Layout title={post.title}>
-      <article>
+      <x.article w="100%">
         <HeadingSection>
-          <Box as="header" row justifyContent={{ sm: 'center' }} my={6} mx={4}>
-            <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
+          <x.div as="header" row justifyContent={{ sm: 'center' }} my={6} mx={4}>
+            <x.div col={{ sm: 3 / 4, md: 2 / 3 }}>
               <Spaced my={3}>
-                <Box as="h1" fontWeight="lighter" fontSize={{ xs: '4xl', sm: '5xl' }}>
+                <x.div as="h1" fontWeight="lighter" fontSize={{ xs: '4xl', sm: '5xl' }}>
                   {post.title}
-                </Box>
+                </x.div>
                 {post.subtitle && (
-                  <Box
+                  <x.div
                     as="h2"
                     opacity={0.75}
                     fontWeight="normal"
                     fontSize={{ xs: 'xl', sm: '2xl' }}
                   >
                     {post.subtitle}
-                  </Box>
+                  </x.div>
                 )}
-                <Box row fontSize="lg" justifyContent="space-between">
-                  <Box>{formatRelative(new Date(post.date), new Date())}</Box>
-                  <Box opacity={0.75}>{post.readingTime}</Box>
-                </Box>
-                <Box display="flex" alignItems="baseline" flexWrap="wrap">
+                <x.div row fontSize="lg" justifyContent="space-between">
+                  <x.div>{formatRelative(new Date(post.date), new Date())}</x.div>
+                  <x.div opacity={0.75}>{post.readingTime}</x.div>
+                </x.div>
+                <x.div display="flex" alignItems="baseline" flexWrap="wrap">
                   <Spaced mr={2} mb={2}>
                     {post.tags?.length && post.tags.map(t => <Tag key={t}>{t}</Tag>)}
                   </Spaced>
-                </Box>
+                </x.div>
               </Spaced>
-            </Box>
-          </Box>
+            </x.div>
+          </x.div>
         </HeadingSection>
-        <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
-          <Box col maxWidth={9}>
-            <Box row justifyContent="center">
-              {post.imageUrl && (
-                <Box my={3} col={{ xs: 1, md: 2 / 3 }}>
-                  <Image
-                    src={post.imageUrl}
-                    layout="responsive"
-                    objectFit="cover"
-                    width={800}
-                    height={600}
-                  />
-                </Box>
-              )}
-              <Box col={1} fontSize={'lg'} lineHeight="copy">
-                <ReactMarkdown renderers={renderers}>{post.content}</ReactMarkdown>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </article>
+        <x.div row justifyContent={{ sm: 'center' }} my={4} mx={4} maxWidth="100%">
+          <x.div row justifyContent="center" w="100%" maxWidth={9}>
+            {post.imageUrl && (
+              <x.div my={3} col={{ xs: 1, md: 2 / 3 }}>
+                <Image
+                  src={post.imageUrl}
+                  title={post.imageTitle}
+                  layout="responsive"
+                  objectFit="cover"
+                  width={800}
+                  height={600}
+                />
+              </x.div>
+            )}
+            <x.div col={1} fontSize={'lg'} lineHeight="copy">
+              <ReactMarkdown renderers={renderers}>{post.content}</ReactMarkdown>
+            </x.div>
+          </x.div>
+        </x.div>
+      </x.article>
     </Layout>
   );
 }

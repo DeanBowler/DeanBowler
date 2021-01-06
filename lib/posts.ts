@@ -12,6 +12,7 @@ export interface PostProps {
   content: string;
   tags?: string[];
   imageUrl?: string;
+  imageTitle?: string;
   readingTime: string;
 }
 

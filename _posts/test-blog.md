@@ -5,6 +5,7 @@ summary: "Something which I've had to employ in the past, and you may find usefu
 date: '2021-01-03'
 tags: ['sneaky train tips', 'poo', 'incontinence', 'anna must haves']
 imageUrl: /images/posts/test-blog.jpg
+imageTitle: That Donald is a sneaky diaper lad
 ---
 
 ## Hey

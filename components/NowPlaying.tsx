@@ -32,7 +32,7 @@ export function NowPlaying() {
             </svg>
           </x.div>
           <x.div>
-            <x.div opacity={0.75}>Now Playing:</x.div>
+            <x.div opacity={0.85}>Listening to:</x.div>
             {data.isPlaying ? (
               <x.div>
                 {data.title} - {data.artist}
