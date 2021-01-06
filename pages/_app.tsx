@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import { ColorModeProvider, ThemeProvider } from '@xstyled/styled-components';
 import theme from '@/styled/theme';
 import { SvgFilterDefinitions } from '@/components/SvgFilters';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 export default function App({
   Component,
@@ -17,11 +20,13 @@ export default function App({
   const router = useRouter();
 
   return (
-    <ThemeProvider theme={theme}>
-      <ColorModeProvider>
-        <Component {...pageProps} key={router.route} />
-      </ColorModeProvider>
-      <SvgFilterDefinitions />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <ColorModeProvider>
+          <Component {...pageProps} key={router.route} />
+        </ColorModeProvider>
+        <SvgFilterDefinitions />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }

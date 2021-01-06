@@ -10,8 +10,9 @@ import styled, {
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
 import Spaced from '@/styled/Spaced';
-import { Seo } from './Seo';
-import { SiteHeader } from './SiteHeader';
+import { Seo } from '@/components/Seo';
+import { SiteHeader } from '@/components/SiteHeader';
+import { NowPlaying } from '@/components/NowPlaying';
 
 type Props = {
   children?: ReactNode;
@@ -107,53 +108,62 @@ export const Layout = ({
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;700&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <Seo title={title} />
         <SiteHeader />
         {children}
         {includeFooter && (
-          <x.footer
-            row
-            my={3}
-            mx={{ xs: 4, md: 6 }}
-            justifyContent="space-between"
-            alignItems="center"
-            color="text"
-          >
-            <x.span>Dean Bowler © 2020</x.span>
-            <x.div fontSize="2xl">
-              <Spaced mx={2}>
-                <x.a
-                  color="text"
-                  aria-label="GitHub"
-                  href="https://github.com/DeanBowler"
-                  opacity={0.7}
-                  hoverOpacity={1}
-                >
-                  <SiGithub />
-                </x.a>
-                <x.a
-                  color="text"
-                  aria-label="LinkedIn"
-                  href="https://www.linkedin.com/in/dean-bowler-875a7323"
-                  opacity={0.7}
-                  hoverOpacity={1}
-                >
-                  <SiLinkedin />
-                </x.a>
-                <x.a
-                  color="text"
-                  aria-label="Twitter"
-                  href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
-                  opacity={0.7}
-                  hoverOpacity={1}
-                >
-                  <SiTwitter />
-                </x.a>
-              </Spaced>
+          <x.footer>
+            <x.div row my={3} mx={{ xs: 4, md: 6 }} justifyContent="center">
+              <NowPlaying />
+            </x.div>
+            <x.div
+              row
+              my={3}
+              mx={{ xs: 4, md: 6 }}
+              justifyContent="space-between"
+              alignItems="center"
+              color="text"
+            >
+              <x.span>Dean Bowler © 2020</x.span>
+              <x.div fontSize="2xl">
+                <Spaced mx={2}>
+                  <x.a
+                    color="text"
+                    aria-label="GitHub"
+                    href="https://github.com/DeanBowler"
+                    opacity={0.7}
+                    hoverOpacity={1}
+                  >
+                    <SiGithub />
+                  </x.a>
+                  <x.a
+                    color="text"
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/in/dean-bowler-875a7323"
+                    opacity={0.7}
+                    hoverOpacity={1}
+                  >
+                    <SiLinkedin />
+                  </x.a>
+                  <x.a
+                    color="text"
+                    aria-label="Twitter"
+                    href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
+                    opacity={0.7}
+                    hoverOpacity={1}
+                  >
+                    <SiTwitter />
+                  </x.a>
+                </Spaced>
+              </x.div>
             </x.div>
           </x.footer>
         )}
