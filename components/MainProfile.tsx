@@ -1,9 +1,10 @@
-import styled, { Box } from '@xstyled/styled-components';
+import styled, { Box, x } from '@xstyled/styled-components';
 import Image from 'next/image';
 
 import { SocialLinks } from '@/components/SocialLinks';
 import { HeadingSection } from '@/components/HeadingSection';
 import { hueCycleAnimation } from '@/styled/keyframes';
+import { NowPlaying } from './NowPlaying';
 
 const ProfileImageContainer = styled.div`
   border-radius: 50%;
@@ -18,48 +19,49 @@ const ProfileImageContainer = styled.div`
   }
 `;
 
-const AboutMeContainer = styled.div`
-  display: flex;
-  flex: 1 1 auto;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2;
-  margin-bottom: 6;
-  color: white;
-  user-select: none;
-`;
-
 export const MainProfile = () => {
   return (
     <HeadingSection fullHeight={true}>
-      <AboutMeContainer>
-        <ProfileImageContainer>
-          <Image
-            src="/images/me.jpg"
-            width="128"
-            height="128"
-            alt="Profile Picture"
-            priority={true}
-            loading="eager"
-          />
-        </ProfileImageContainer>
-        <Box
-          as="h1"
-          fontSize={{ xs: '4xl', sm: '6xl' }}
-          fontWeight="lighter"
-          margin={0}
-          marginTop={3}
-          lineHeight="solid"
-        >
-          Dean Bowler
-        </Box>
-        <Box fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
-          Web Developer
-        </Box>
-        <SocialLinks />
-      </AboutMeContainer>
+      <x.div display="flex" flex="1 1 auto" color="white" userSelect="none">
+        <x.div display="grid" gridAutoFlow="rows" gridAutoRows="1fr max-content" w="100%">
+          <x.div
+            display="flex"
+            textAlign="center"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            mb={4}
+          >
+            <ProfileImageContainer>
+              <Image
+                src="/images/me.jpg"
+                width="128"
+                height="128"
+                alt="Profile Picture"
+                priority={true}
+                loading="eager"
+              />
+            </ProfileImageContainer>
+            <Box
+              as="h1"
+              fontSize={{ xs: '4xl', sm: '6xl' }}
+              fontWeight="lighter"
+              margin={0}
+              marginTop={3}
+              lineHeight="solid"
+            >
+              Dean Bowler
+            </Box>
+            <Box fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
+              Web Developer
+            </Box>
+            <SocialLinks />
+          </x.div>
+          <x.div m={{ xs: 3, sm: 4 }} minHeight={3}>
+            <NowPlaying />
+          </x.div>
+        </x.div>
+      </x.div>
     </HeadingSection>
   );
 };

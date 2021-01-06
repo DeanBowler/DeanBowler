@@ -150,6 +150,7 @@ export const Layout = ({
                     href="https://www.linkedin.com/in/dean-bowler-875a7323"
                     opacity={0.7}
                     hoverOpacity={1}
+                    hoverColor="#0072b1"
                   >
                     <SiLinkedin />
                   </x.a>
@@ -159,6 +160,7 @@ export const Layout = ({
                     href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
                     opacity={0.7}
                     hoverOpacity={1}
+                    hoverColor="#1DA1F2"
                   >
                     <SiTwitter />
                   </x.a>

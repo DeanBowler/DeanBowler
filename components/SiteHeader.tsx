@@ -33,14 +33,16 @@ const StyledLink = styled.aBox`
 export function SiteHeader() {
   return (
     <Header>
-      <Box px={3}>{process.env.NODE_ENV === 'development' && <DarkModeToggle />}</Box>
+      <Box px={{ xs: 2, sm: 3 }}>
+        {process.env.NODE_ENV === 'development' && <DarkModeToggle />}
+      </Box>
       {process.env.NODE_ENV === 'development' && (
-        <Box px={3}>
+        <Box px={{ xs: 3, sm: 4 }}>
           <Link href="/" passHref>
-            <StyledLink fontSize={{ xs: 'lg', md: 'xl' }}>About</StyledLink>
+            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }}>About</StyledLink>
           </Link>
           <Link href="/blog" passHref>
-            <StyledLink fontSize={{ xs: 'lg', md: 'xl' }} mx={4}>
+            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} ml={3}>
               Blog
             </StyledLink>
           </Link>

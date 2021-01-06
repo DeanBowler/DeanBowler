@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const SectionContainer = styled.section<{ fullHeight: boolean }>`
   position: relative;
   display: flex;
+  flex-direction: column;
   min-height: ${p => (p.fullHeight ? 'calc(100vh)' : 'inherit')};
 `;
 
