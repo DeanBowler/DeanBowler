@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import styled, {
   createGlobalStyle,
-  keyframes,
   th,
   useColorMode,
   x,
@@ -46,18 +45,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const gradientShift = keyframes`	
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-`;
-
 const Container = styled.div<{ background: string }>`
   display: flex;
   flex-direction: column;
@@ -92,7 +79,6 @@ export const Layout = ({
   children,
   title = 'Dean Bowler',
   includeFooter = true,
-}: Props) => {
 }: LayoutProps) => {
   const [colorMode] = useColorMode();
 
