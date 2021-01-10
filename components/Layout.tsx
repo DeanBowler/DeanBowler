@@ -14,17 +14,12 @@ import { Seo } from '@/components/Seo';
 import { SiteHeader } from '@/components/SiteHeader';
 import { NowPlaying } from '@/components/NowPlaying';
 
-type Props = {
-  children?: ReactNode;
-  title?: string;
-  includeFooter?: boolean;
-};
-
 const GlobalStyle = createGlobalStyle`
   html {
     min-height: 100%;
     height: 100%;
     position:relative;
+    scroll-behavior: smooth;
   }
 
   body {  
@@ -72,8 +67,6 @@ const Container = styled.div<{ background: string }>`
   color: text;
   background-color: background;
 
-  animation: ${gradientShift} 30s ease infinite forwards;
-
   z-index: 0;
 
   ::before {
@@ -90,11 +83,17 @@ const Container = styled.div<{ background: string }>`
   }
 `;
 
+interface LayoutProps {
+  children?: ReactNode;
+  title?: string;
+  includeFooter?: boolean;
+}
 export const Layout = ({
   children,
   title = 'Dean Bowler',
   includeFooter = true,
 }: Props) => {
+}: LayoutProps) => {
   const [colorMode] = useColorMode();
 
   return (
@@ -104,17 +103,6 @@ export const Layout = ({
       >
         <Head>
           <title>{title}</title>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;700&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap"
-            rel="stylesheet"
-          ></link>
         </Head>
         <Seo title={title} />
         <SiteHeader />
