@@ -15,6 +15,7 @@ const BACKGROUND_GRADIENT_THREE = '#5a3c58';
 interface StyledHeaderProps {
   scrollDirection: ScrollDirection;
   scrolledTop: boolean;
+  forceHeaderBg: boolean;
 }
 
 const Header = styled.headerBox<StyledHeaderProps>`
@@ -46,7 +47,8 @@ const Header = styled.headerBox<StyledHeaderProps>`
     bottom: 0;
     right: 0;
     left: 0;
-    opacity: ${({ scrolledTop }) => (scrolledTop ? 0 : 1)};
+    opacity: ${({ scrolledTop, forceHeaderBg }) =>
+      scrolledTop && !forceHeaderBg ? 0 : 1};
     background: linear-gradient(
       -25deg,
       ${BACKGROUND_GRADIENT_ONE},
@@ -63,7 +65,8 @@ const Header = styled.headerBox<StyledHeaderProps>`
     content: '';
     background-image: url(/background-header.svg);
     background-attachment: fixed;
-    opacity: ${({ scrolledTop }) => (scrolledTop ? 0 : 1)};
+    opacity: ${({ scrolledTop, forceHeaderBg }) =>
+      scrolledTop && !forceHeaderBg ? 0 : 1};
     position: absolute;
     top: 0;
     bottom: 0;
@@ -84,11 +87,16 @@ const StyledLink = styled.aBox`
   }
 `;
 
-export function SiteHeader() {
+export interface SiteHeaderProps {
+  /** Ignore scroll position/direction and always show the header bg, useful when the layout does not have a dark heading */
+  forceHeaderBg?: boolean;
+}
+
+export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
   const { scrollDirection, scrolledTop } = useWindowScroll();
 
   return (
-    <Header {...{ scrollDirection, scrolledTop }}>
+    <Header {...{ scrollDirection, scrolledTop, forceHeaderBg }}>
       <Box px={{ xs: 3, sm: 4 }}>
         {process.env.NODE_ENV === 'development' && <DarkModeToggle />}
       </Box>

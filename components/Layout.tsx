@@ -94,14 +94,18 @@ const Container = styled.div<{ background: string }>`
 interface LayoutProps {
   children?: ReactNode;
   title?: string;
+  forceHeaderBg?: 'dark' | 'default' | boolean;
   includeFooter?: boolean;
 }
 export const Layout = ({
   children,
   title = 'Dean Bowler',
+  forceHeaderBg = false,
   includeFooter = true,
 }: LayoutProps) => {
   const [colorMode] = useColorMode();
+
+  const shouldForceHeaderBg = forceHeaderBg === true || colorMode === forceHeaderBg;
 
   return (
     <>
@@ -112,7 +116,7 @@ export const Layout = ({
           <title>{title}</title>
         </Head>
         <Seo title={title} />
-        <SiteHeader />
+        <SiteHeader forceHeaderBg={shouldForceHeaderBg} />
         {children}
         {includeFooter && (
           <x.footer mt={5}>
