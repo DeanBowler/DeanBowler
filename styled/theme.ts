@@ -31,16 +31,17 @@ export interface AppTheme extends Theme {
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
   colors: {
-    primary: 'hsl(150, 30%, 50%)',
+    primary: 'hsl(150, 40%, 45%)',
     secondary: 'hsl(300, 20%, 55%)',
-    white: '#f9fafa',
+    white: 'hsl(180deg 10% 99%)',
     black: '#333333',
     text: '#000000',
-    background: '#f9fafa',
+    background: 'hsl(180deg 10% 99%)',
     modes: {
       dark: {
+        primary: 'hsl(150, 40%, 50%)',
         text: '#eaeded',
-        background: '#333333',
+        background: 'hsl(235deg 10% 20%)',
       },
     },
   },
@@ -72,6 +73,7 @@ const theme: Partial<AppTheme> = {
     '18rem',
     '32rem',
     '52rem',
+    '64rem',
   ],
   space: [0, 4, 8, 16, 24, 48, 96, 144, 192, 240],
   screens: { xs: 0, sm: 576, md: 768, lg: 992, xl: 1200 },

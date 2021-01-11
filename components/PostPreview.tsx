@@ -31,7 +31,7 @@ export function PostPreview({
       <Spaced my={2}>
         <Link href={`/blog/${slug}`} passHref>
           <StyledLink>
-            <Box as="h3" fontSize={{ xs: 'xl', sm: '2xl' }} m={0}>
+            <Box as="h3" fontWeight="normal" fontSize={{ xs: 'xl', sm: '2xl' }} m={0}>
               {title}
             </Box>
           </StyledLink>

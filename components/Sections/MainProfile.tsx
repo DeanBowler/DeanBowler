@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { SocialLinks } from '@/components/SocialLinks';
 import { HeadingSection } from '@/components/HeadingSection';
 import { hueCycleAnimation } from '@/styled/keyframes';
-import { NowPlaying } from './NowPlaying';
+import { NowPlaying } from '../NowPlaying';
 
 const ProfileImageContainer = styled.div`
   border-radius: 50%;

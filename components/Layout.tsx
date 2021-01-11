@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0;
     font-size: 16px;
+    line-height: 1.3;
   }
 
   #__next {
@@ -68,6 +69,26 @@ const Container = styled.div<{ background: string }>`
     left: 0;
     pointer-events: none;
   }
+
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0px;
+    font-size: 3xl;
+    color: primary;
+  }
 `;
 
 interface LayoutProps {
@@ -94,7 +115,7 @@ export const Layout = ({
         <SiteHeader />
         {children}
         {includeFooter && (
-          <x.footer>
+          <x.footer mt={5}>
             <x.div row my={3} mx={{ xs: 4, md: 6 }} justifyContent="center">
               <NowPlaying />
             </x.div>

@@ -9,6 +9,14 @@ to {
 }
 `;
 
+export const fadeIn = keyframes`
+from: {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}`;
+
 export const gradientShift = keyframes`	
   0% {
     background-position: 0% 50%;

@@ -99,6 +99,11 @@ export function SiteHeader() {
               About
             </StyledLink>
           </Link>
+          <Link href="/#experience" passHref>
+            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
+              Experience
+            </StyledLink>
+          </Link>
           <Link href="/blog" passHref>
             <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
               Blog

@@ -25,7 +25,12 @@ export default function BlogIndex({ allPosts }: BlogIndexProps) {
       </HeadingSection>
       <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
         <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
-          <Box as="h2" fontWeight="normal" fontSize={{ xs: '3xl', sm: '4xl' }}>
+          <Box
+            as="h2"
+            fontWeight="normal"
+            fontSize={{ xs: '3xl', sm: '4xl' }}
+            color="primary"
+          >
             Posts
           </Box>
           <Spaced my={4}>
