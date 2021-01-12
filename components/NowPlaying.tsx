@@ -20,9 +20,9 @@ export function NowPlaying({ className }: NowPlayingProps) {
   });
 
   return (
-    <>
+    <x.div h={3} row className={className}>
       {isFetched && data && (
-        <x.div row alignItems="flex-end" className={className}>
+        <x.div row alignItems="flex-end">
           <x.div w={32} mr={2}>
             <svg
               className="h-4 w-4 ml-auto mt-1"
@@ -47,6 +47,6 @@ export function NowPlaying({ className }: NowPlayingProps) {
           </x.div>
         </x.div>
       )}
-    </>
+    </x.div>
   );
 }

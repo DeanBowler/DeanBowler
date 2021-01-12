@@ -4,6 +4,7 @@ import { Theme, defaultTheme } from '@xstyled/system';
 
 interface Colors {
   primary: string;
+  'primary-glass': string;
   secondary: string;
   white: string;
   black: string;
@@ -31,7 +32,8 @@ export interface AppTheme extends Theme {
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
   colors: {
-    primary: 'hsl(150, 40%, 45%)',
+    primary: 'hsl(150, 40%, 50%)',
+    'primary-glass': 'hsla(150, 40%, 50%, 0.1)',
     secondary: 'hsl(300, 20%, 55%)',
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
