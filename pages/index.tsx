@@ -11,11 +11,10 @@ export default function IndexPage() {
       includeFooter={process.env.NODE_ENV === 'development'}
     >
       <MainProfile />
-      {process.env.NODE_ENV === 'development' && (
-        <x.div>
-          <Experience />
-        </x.div>
-      )}
+
+      <x.div>
+        <Experience />
+      </x.div>
     </Layout>
   );
 }

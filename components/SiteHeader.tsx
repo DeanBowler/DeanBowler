@@ -99,7 +99,7 @@ export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
 
   const showBackground = scrollPositionY > 100;
 
-  return process.env.NODE_ENV === 'development' ? (
+  return (
     <Header {...{ scrollDirection, scrolledTop, forceHeaderBg, showBackground }}>
       <Box px={{ xs: 3, sm: 4 }}>
         <DarkModeToggle />
@@ -124,7 +124,5 @@ export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
         )}
       </Box>
     </Header>
-  ) : (
-    <></>
   );
 }

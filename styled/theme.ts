@@ -6,19 +6,22 @@ interface Colors {
   primary: string;
   'primary-a10': string;
   'primary-a20': string;
+  'primary-a30': string;
   'primary-a50': string;
   secondary: string;
   white: string;
   black: string;
   text: string;
+  'text-a30': string;
   'text-a50': string;
   background: string;
 }
 
-type ColorMode = 'dark';
+type ColorMode = 'default' | 'dark';
 
 export interface AppTheme extends Theme {
-  colors: Colors & { modes: Record<ColorMode, Partial<Colors>> };
+  defaultColorModeName: ColorMode;
+  colors: Colors & { modes: Record<Exclude<ColorMode, 'default'>, Partial<Colors>> };
   fonts: {
     normal: string;
     cursive: string;
@@ -34,22 +37,26 @@ export interface AppTheme extends Theme {
 
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
+  defaultColorModeName: 'dark',
   colors: {
     primary: 'hsl(150, 40%, 50%)',
     'primary-a10': 'hsla(150, 40%, 50%, 0.1)',
-    'primary-a20': 'hsla(150, 40%, 50%, 0.25)',
+    'primary-a20': 'hsla(150, 40%, 50%, 0.2)',
+    'primary-a30': 'hsla(150, 40%, 50%, 0.3)',
     'primary-a50': 'hsla(150, 40%, 50%, 0.5)',
     secondary: 'hsl(300, 20%, 55%)',
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
     text: 'hsl(0,0%,0%)',
-    'text-a50': 'hsla(0,0%,0%, 0.35)',
+    'text-a30': 'hsla(0,0%,0%, 0.3)',
+    'text-a50': 'hsla(0,0%,0%, 0.5)',
     background: 'hsl(180deg 10% 99%)',
     modes: {
       dark: {
         primary: 'hsl(150, 40%, 50%)',
         text: 'hsl(180 8% 92%)',
-        'text-a50': 'hsla(180, 8%, 92%, 0.4)',
+        'text-a30': 'hsla(180, 8%, 92%, 0.3)',
+        'text-a50': 'hsla(180, 8%, 92%, 0.5)',
         background: 'hsl(235deg 10% 20%)',
       },
     },

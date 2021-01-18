@@ -1,0 +1,60 @@
+import React from 'react';
+import { x } from '@xstyled/styled-components';
+
+import Spaced from '@/styled/Spaced';
+
+import { RangeSlider } from '@/components/RangeSlider';
+import { StyleSettings } from './types';
+import { Toggle } from '@/components/Toggle';
+
+export interface StyleSettingsPanelProps {
+  className?: string;
+  settings: StyleSettings;
+  onSettingsChange(newSettings: Partial<StyleSettings>): void;
+}
+
+export function StyleSettingsPanel({
+  className,
+  settings,
+  onSettingsChange,
+}: StyleSettingsPanelProps) {
+  return (
+    <x.div
+      row
+      flexDirection="column"
+      alignItems="flex-start"
+      className={className}
+      letterSpacing={2}
+    >
+      <x.h3>Style</x.h3>
+      <Spaced my={2}>
+        <Toggle
+          label="Outline"
+          value={settings.addOutline}
+          onClick={() =>
+            onSettingsChange({
+              addOutline: !settings.addOutline,
+            })
+          }
+        />
+        <Toggle
+          label="Color"
+          value={settings.matchHue}
+          onClick={() =>
+            onSettingsChange({
+              matchHue: !settings.matchHue,
+            })
+          }
+        />
+        <RangeSlider
+          label="Lightness"
+          min={0.5}
+          max={1.5}
+          step={0.05}
+          value={settings.lighten}
+          onValueChange={lighten => onSettingsChange({ lighten })}
+        />
+      </Spaced>
+    </x.div>
+  );
+}
