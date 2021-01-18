@@ -38,9 +38,15 @@ export function NowPlaying({ className }: NowPlayingProps) {
           <x.div>
             <x.div opacity={0.85}>Listening to:</x.div>
             {data.isPlaying ? (
-              <x.div>
+              <x.a
+                href={data.songUrl}
+                textDecoration="none"
+                color="inherit"
+                target="_blank"
+                rel="noopener"
+              >
                 {data.title} - {data.artist}
-              </x.div>
+              </x.a>
             ) : (
               <x.div>Nothing - Must be asleep 😴</x.div>
             )}

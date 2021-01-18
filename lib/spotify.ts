@@ -31,6 +31,7 @@ export interface NowPlaying {
   title?: string;
   album?: string;
   artist?: string;
+  songUrl?: string;
 }
 
 export const getNowPlaying = async () => {
@@ -56,5 +57,6 @@ export const getNowPlaying = async () => {
     artist: nowPlaying.item.artists
       .map((artist: { name: string }) => artist.name)
       .join(', '),
+    songUrl: nowPlaying.item.external_urls.spotify,
   } as NowPlaying;
 };
