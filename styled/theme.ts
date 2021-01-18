@@ -4,11 +4,14 @@ import { Theme, defaultTheme } from '@xstyled/system';
 
 interface Colors {
   primary: string;
-  'primary-glass': string;
+  'primary-a10': string;
+  'primary-a20': string;
+  'primary-a50': string;
   secondary: string;
   white: string;
   black: string;
   text: string;
+  'text-a50': string;
   background: string;
 }
 
@@ -33,16 +36,20 @@ const theme: Partial<AppTheme> = {
   ...defaultTheme,
   colors: {
     primary: 'hsl(150, 40%, 50%)',
-    'primary-glass': 'hsla(150, 40%, 50%, 0.1)',
+    'primary-a10': 'hsla(150, 40%, 50%, 0.1)',
+    'primary-a20': 'hsla(150, 40%, 50%, 0.25)',
+    'primary-a50': 'hsla(150, 40%, 50%, 0.5)',
     secondary: 'hsl(300, 20%, 55%)',
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
-    text: '#000000',
+    text: 'hsl(0,0%,0%)',
+    'text-a50': 'hsla(0,0%,0%, 0.35)',
     background: 'hsl(180deg 10% 99%)',
     modes: {
       dark: {
         primary: 'hsl(150, 40%, 50%)',
-        text: '#eaeded',
+        text: 'hsl(180 8% 92%)',
+        'text-a50': 'hsla(180, 8%, 92%, 0.4)',
         background: 'hsl(235deg 10% 20%)',
       },
     },

@@ -95,30 +95,32 @@ export interface SiteHeaderProps {
 export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
   const { scrollDirection, scrolledTop } = useWindowScroll();
 
-  return (
+  return process.env.NODE_ENV === 'development' ? (
     <Header {...{ scrollDirection, scrolledTop, forceHeaderBg }}>
       <Box px={{ xs: 3, sm: 4 }}>
-        {process.env.NODE_ENV === 'development' && <DarkModeToggle />}
+        <DarkModeToggle />
       </Box>
-      {process.env.NODE_ENV === 'development' && (
-        <Box px={{ xs: 2, sm: 3 }}>
-          <Link href="/" passHref>
-            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
-              About
-            </StyledLink>
-          </Link>
-          <Link href="/#experience" passHref>
-            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
-              Experience
-            </StyledLink>
-          </Link>
+      <Box px={{ xs: 2, sm: 3 }}>
+        <Link href="/" passHref>
+          <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
+            About
+          </StyledLink>
+        </Link>
+        <Link href="/#experience" passHref>
+          <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
+            Experience
+          </StyledLink>
+        </Link>
+        {process.env.NODE_ENV === 'development' && (
           <Link href="/blog" passHref>
             <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
               Blog
             </StyledLink>
           </Link>
-        </Box>
-      )}
+        )}
+      </Box>
     </Header>
+  ) : (
+    <></>
   );
 }

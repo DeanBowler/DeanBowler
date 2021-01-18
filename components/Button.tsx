@@ -1,6 +1,10 @@
-import styled from '@xstyled/styled-components';
+import styled, { css, th } from '@xstyled/styled-components';
 
-export const Button = styled.button`
+interface ButtonProps {
+  fullWidth?: boolean;
+}
+
+export const Button = styled.button<ButtonProps>`
   padding: 3 4;
   border-radius: 10;
   background-color: transparent;
@@ -11,7 +15,19 @@ export const Button = styled.button`
   text-decoration: none;
   letter-spacing: 2;
 
+  ${p =>
+    p.fullWidth &&
+    css`
+      width: 100%;
+    `}
+
   :hover {
-    background-color: primary-glass;
+    background-color: primary-a10;
+  }
+
+  :focus {
+    /* box-shadow: red */
+    box-shadow: 0 0 0 5px ${th.color('primary-a20')};
+    outline: none;
   }
 `;
