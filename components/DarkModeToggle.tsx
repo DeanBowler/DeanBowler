@@ -18,6 +18,9 @@ export function DarkModeToggle() {
       focusOutline="none"
       cursor="pointer"
       hoverOpacity={1}
+      role="checkbox"
+      aria-label="toggle dark mode"
+      aria-checked={colorMode === 'dark'}
     >
       {colorMode === 'dark' ? <FiMoon /> : <FiSun />}
     </x.button>

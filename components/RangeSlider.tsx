@@ -56,6 +56,7 @@ export function RangeSlider({
       <x.label>{label}</x.label>
       <x.div row>
         <StyledRange
+          aria-label={label}
           type="range"
           min={min}
           max={max}
