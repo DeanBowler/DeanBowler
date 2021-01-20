@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 16px;
     line-height: 1.3;
+    background-color: background;
   }
 
   #__next {

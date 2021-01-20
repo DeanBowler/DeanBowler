@@ -16,6 +16,8 @@ import { StyleSettingsPanel } from '@/components/ParrotGenerator/StyleSettingsPa
 import { lighten } from '@/lib/image/lighten';
 import { downloadBlob } from '@/lib/downloadBlob';
 import { preComputedPalette } from '@/components/ParrotGenerator/precomputedPalette';
+import useDebouncedState from '@/hooks/useDebouncedState';
+import { resizeImage } from '@/lib/image/resizeImage';
 
 const loadImageAsync = (imageUrl: string) => {
   const image = new Image();
@@ -121,6 +123,7 @@ export default function ParrotMe() {
   const userImageName = useRef('');
 
   const parrotImages = useRef<HTMLImageElement[]>([]);
+  const [fetchingParrots, setFetchingParrots] = useDebouncedState(false, 500);
 
   const userImageFrames = useRef<HTMLImageElement[]>([]);
   const outlineFrame = useRef<HTMLImageElement>();
@@ -145,7 +148,9 @@ export default function ParrotMe() {
 
   useEffect(() => {
     const loadParrotImages = async () => {
+      setFetchingParrots(true);
       parrotImages.current = await loadImages(frames);
+      setFetchingParrots(false);
     };
 
     loadParrotImages();
@@ -172,8 +177,10 @@ export default function ParrotMe() {
     if (!file) return;
     const img = await loadImageAsync(URL.createObjectURL(file));
 
+    const resized = resizeImage(img, 512);
+
     userImageName.current = file.name.substr(0, file.name.lastIndexOf('.'));
-    return setUserImage(img);
+    return setUserImage(resized);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
@@ -181,7 +188,7 @@ export default function ParrotMe() {
     noClick: true,
     onDrop,
     maxFiles: 1,
-    maxSize: 256 * 1024,
+    maxSize: 10 * 1024 * 1024,
   });
 
   useEffect(() => {
@@ -189,8 +196,6 @@ export default function ParrotMe() {
 
     async function startRender() {
       if (!canvas.current) return;
-      const ctx = canvas.current.getContext('2d');
-      if (!ctx) return;
 
       let lastTime = 0;
 
@@ -205,7 +210,6 @@ export default function ParrotMe() {
         if (deltaTime > FRAME_MIN_TIME) {
           drawParrotFrame(
             canvas.current,
-            ctx,
             parrotImages.current,
             frame.current ?? 0,
             layoutRef.current,
@@ -233,14 +237,11 @@ export default function ParrotMe() {
   }, [userImage]);
 
   const saveGif = async () => {
-    if (!canvas.current) return;
-
     const gif = new GIF({
       workers: 2,
       quality: 10,
       transparent: 'true',
       globalPalette: styleSettings.matchHue ? preComputedPalette : false,
-      // dither: true,
       height: 128,
       width: 128,
       workerScript: require('url-loader!gif.js/dist/gif.worker.js').default,
@@ -249,13 +250,10 @@ export default function ParrotMe() {
     const gifCanvas = document.createElement('canvas');
     gifCanvas.width = 128;
     gifCanvas.height = 128;
-    const ctx = gifCanvas.getContext('2d');
-    if (!ctx) return;
 
     for (let currentFrame = 0; currentFrame < frameMeta.length; currentFrame++) {
       drawParrotFrame(
         gifCanvas,
-        ctx,
         parrotImages.current,
         currentFrame,
         layoutRef.current,
@@ -324,7 +322,6 @@ export default function ParrotMe() {
           <x.div col flexDirection="column" justifyContent="center" w={5} display="flex">
             <Spaced mb={4} includeLast={false}>
               <Button fullWidth onClick={open}>
-                {' '}
                 {isDragActive ? 'Drop Picture' : 'Select Picture'}
               </Button>
               <x.div
@@ -334,9 +331,14 @@ export default function ParrotMe() {
                 flexDirection="column"
                 alignItems="center"
                 outline="none"
+                position="relative"
               >
                 <input {...getInputProps()} />
-
+                {fetchingParrots && (
+                  <x.div position="absolute" top="40%">
+                    Fetching parrots...
+                  </x.div>
+                )}
                 <x.canvas mt={4} ref={canvas} width="128px" height="128px" />
               </x.div>
               <Button onClick={saveGif}>Generate GIF</Button>
@@ -356,7 +358,6 @@ export default function ParrotMe() {
 
 function drawParrotFrame(
   canvas: HTMLCanvasElement,
-  ctx: CanvasRenderingContext2D,
   parrotImages: HTMLImageElement[],
   frame: number,
   layoutSettings: LayoutSettings,
@@ -365,6 +366,9 @@ function drawParrotFrame(
   userImage: HTMLImageElement | undefined,
   userImageFrames: HTMLImageElement[],
 ) {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if (parrotImages.length === 0) return;
