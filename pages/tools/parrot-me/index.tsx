@@ -323,6 +323,10 @@ export default function ParrotMe() {
           </x.div>
           <x.div col flexDirection="column" justifyContent="center" w={5} display="flex">
             <Spaced mb={4} includeLast={false}>
+              <Button fullWidth onClick={open}>
+                {' '}
+                {isDragActive ? 'Drop Picture' : 'Select Picture'}
+              </Button>
               <x.div
                 {...getRootProps()}
                 tabIndex={-1}
@@ -332,9 +336,7 @@ export default function ParrotMe() {
                 outline="none"
               >
                 <input {...getInputProps()} />
-                <Button fullWidth onClick={open}>
-                  {isDragActive ? 'Drop Picture' : 'Select Picture'}
-                </Button>
+
                 <x.canvas mt={4} ref={canvas} width="128px" height="128px" />
               </x.div>
               <Button onClick={saveGif}>Generate GIF</Button>
