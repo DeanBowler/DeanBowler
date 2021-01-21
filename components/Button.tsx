@@ -8,12 +8,14 @@ export const Button = styled.button<ButtonProps>`
   padding: 3 4;
   border-radius: 10;
   background-color: transparent;
+  font-family: ${th.font('normal')}, 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: base;
   border: 2px solid;
   border-color: primary;
   color: primary;
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: 2;
 
   ${p =>
     p.fullWidth &&

@@ -25,7 +25,9 @@ export function LayoutSettingsPanel({
       alignItems="flex-start"
       className={className}
     >
-      <x.h3 letterSpacing={2}>Layout</x.h3>
+      <x.h3 letterSpacing={2} fontWeight="normal">
+        Layout
+      </x.h3>
       <Spaced my={2}>
         <RangeSlider
           label="Horizontal Offset"

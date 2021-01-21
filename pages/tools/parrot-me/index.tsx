@@ -162,14 +162,17 @@ export default function ParrotMe() {
   }, [layoutSettings, styleSettings]);
 
   useEffect(() => {
+    if (!userImage) return;
+    outlineFrame.current = transformImage(userImage, [setColor(0, 0, 0)]);
+  }, [userImage]);
+
+  useEffect(() => {
     if (userImage) {
       userImageFrames.current = styleSettings.matchHue
         ? frameColors.map(({ hue, saturation }) =>
             transformImage(userImage, [setColor(hue, saturation, styleSettings.lighten)]),
           )
         : [transformImage(userImage, [lighten(styleSettings.lighten)])];
-
-      outlineFrame.current = transformImage(userImage, [setColor(0, 0, 0.1)]);
     }
   }, [userImage, styleSettings.lighten, styleSettings.matchHue]);
 

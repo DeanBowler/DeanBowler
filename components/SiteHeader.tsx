@@ -97,7 +97,7 @@ export interface SiteHeaderProps {
 export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
   const { scrollDirection, scrolledTop, scrollPositionY } = useWindowScroll();
 
-  const showBackground = scrollPositionY > 100;
+  const showBackground = scrollPositionY > 40;
 
   return (
     <Header {...{ scrollDirection, scrolledTop, forceHeaderBg, showBackground }}>

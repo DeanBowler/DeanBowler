@@ -37,9 +37,8 @@ export interface AppTheme extends Theme {
 
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
-  defaultColorModeName: 'dark',
   colors: {
-    primary: 'hsl(150, 40%, 50%)',
+    primary: 'hsl(150, 40%, 48%)',
     'primary-a10': 'hsla(150, 40%, 50%, 0.1)',
     'primary-a20': 'hsla(150, 40%, 50%, 0.2)',
     'primary-a30': 'hsla(150, 40%, 50%, 0.3)',
@@ -47,7 +46,7 @@ const theme: Partial<AppTheme> = {
     secondary: 'hsl(300, 20%, 55%)',
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
-    text: 'hsl(0,0%,0%)',
+    text: 'hsl(0,0%,5%)',
     'text-a30': 'hsla(0,0%,0%, 0.3)',
     'text-a50': 'hsla(0,0%,0%, 0.5)',
     background: 'hsl(180deg 10% 99%)',

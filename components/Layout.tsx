@@ -69,6 +69,7 @@ const Container = styled.div<{ background: string }>`
     right: 0;
     left: 0;
     pointer-events: none;
+    opacity: 0.75;
   }
 
   ul {

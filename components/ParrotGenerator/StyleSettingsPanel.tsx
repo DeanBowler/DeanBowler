@@ -26,7 +26,9 @@ export function StyleSettingsPanel({
       className={className}
       letterSpacing={2}
     >
-      <x.h3>Style</x.h3>
+      <x.h3 letterSpacing={2} fontWeight="normal">
+        Style
+      </x.h3>
       <Spaced my={2}>
         <Toggle
           label="Outline"
