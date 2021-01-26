@@ -14,6 +14,7 @@ export interface PostProps {
   imageUrl?: string;
   imageTitle?: string;
   readingTime: string;
+  draft?: boolean;
 }
 
 const postsDirectory = join(process.cwd(), '_posts');
@@ -40,6 +41,7 @@ export function getAllPosts() {
   const slugs = getPostSlugs();
   const posts = slugs
     .map(slug => getPostBySlug(slug))
+    .filter(p => process.env.NODE_ENV === 'development' || p.draft !== true)
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
