@@ -10,6 +10,7 @@ import { transformImage } from '@/lib/image/transformImage';
 import { setColor } from '@/lib/image/setColor';
 import { HeadingSection } from '@/components/HeadingSection';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { LayoutSettings, StyleSettings } from '@/components/ParrotGenerator/types';
 import { LayoutSettingsPanel } from '@/components/ParrotGenerator/LayoutSettingsPanel';
 import { StyleSettingsPanel } from '@/components/ParrotGenerator/StyleSettingsPanel';
@@ -274,7 +275,12 @@ export default function ParrotMe() {
   };
 
   return (
-    <Layout title="Parrot Me | Dean Bowler">
+    <Layout>
+      <Seo
+        title="Parrot Me | Dean Bowler"
+        description="Generate Party Parrots with your beautiful faces"
+        image="https://deanbowler.dev/images/seo/ogmeta-parrot.jpg"
+      />
       <HeadingSection>
         <x.div row justifyContent={{ sm: 'center' }} my={5} mx={4}>
           <x.div col={{ sm: 3 / 4, md: 2 / 3 }}>
