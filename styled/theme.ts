@@ -20,6 +20,7 @@ interface Colors {
 type ColorMode = 'default' | 'dark';
 
 export interface AppTheme extends Theme {
+  initialColorModeName?: ColorMode;
   defaultColorModeName: ColorMode;
   colors: Colors & { modes: Record<Exclude<ColorMode, 'default'>, Partial<Colors>> };
   fonts: {
@@ -37,6 +38,7 @@ export interface AppTheme extends Theme {
 
 const theme: Partial<AppTheme> = {
   ...defaultTheme,
+  initialColorModeName: 'dark',
   colors: {
     primary: 'hsl(150, 40%, 48%)',
     'primary-a10': 'hsla(150, 40%, 50%, 0.1)',

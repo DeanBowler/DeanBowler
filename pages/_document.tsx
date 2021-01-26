@@ -33,9 +33,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <body>
-          {getColorModeInitScriptElement()}
+        <Head>{getColorModeInitScriptElement()}</Head>
+        <body className="xstyled-color-mode-dark">
           <Main />
           <NextScript />
         </body>
