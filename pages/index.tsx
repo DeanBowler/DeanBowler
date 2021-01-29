@@ -8,7 +8,6 @@ export default function IndexPage() {
   return (
     <Layout
       title="Some things about Dean Bowler"
-      includeFooter={process.env.NODE_ENV === 'development'}
     >
       <MainProfile />
 
