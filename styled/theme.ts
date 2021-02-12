@@ -49,14 +49,14 @@ const theme: Partial<AppTheme> = {
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
     text: 'hsl(0,0%,5%)',
-    'text-a30': 'hsla(0,0%,0%, 0.3)',
+    'text-a30': 'hsla(0,0%,0%, 0.26)',
     'text-a50': 'hsla(0,0%,0%, 0.5)',
     background: 'hsl(180deg 10% 99%)',
     modes: {
       dark: {
         primary: 'hsl(150, 40%, 50%)',
         text: 'hsl(180 8% 92%)',
-        'text-a30': 'hsla(180, 8%, 92%, 0.3)',
+        'text-a30': 'hsla(180, 8%, 92%, 0.26)',
         'text-a50': 'hsla(180, 8%, 92%, 0.5)',
         background: 'hsl(235deg 10% 20%)',
       },

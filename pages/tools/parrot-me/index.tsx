@@ -138,10 +138,10 @@ export default function ParrotMe() {
   });
 
   const [styleSettings, setStyleSettings] = useState<StyleSettings>({
-    addOutline: true,
     matchHue: true,
     lighten: 1,
     sharpen: 0,
+    outlineStyle: 'inside',
   });
 
   const layoutRef = useRef(layoutSettings);
@@ -365,6 +365,8 @@ export default function ParrotMe() {
   );
 }
 
+// function drawOutline(ctx: CanvasRenderingContext2D,  )
+
 function drawParrotFrame(
   canvas: HTMLCanvasElement,
   parrotImages: HTMLImageElement[],
@@ -412,15 +414,23 @@ function drawParrotFrame(
       ctx.scale(1, verticalFlip);
     }
 
-    if (outlineFrame && styleSettings.addOutline) {
-      ctx.drawImage(
-        outlineFrame,
-        offsetX - OUTLINE_WIDTH / 2,
-        offsetY - OUTLINE_WIDTH / 2,
-        userImage.width * scale + OUTLINE_WIDTH,
-        userImage.height * scale + OUTLINE_WIDTH,
-      );
-    }
+    const drawOutline = () => {
+      if (outlineFrame) {
+        ctx.drawImage(
+          outlineFrame,
+          offsetX - OUTLINE_WIDTH / 2,
+          offsetY - OUTLINE_WIDTH / 2,
+          userImage.width * scale + OUTLINE_WIDTH,
+          userImage.height * scale + OUTLINE_WIDTH,
+        );
+      }
+    };
+
+    if (styleSettings.outlineStyle === 'outside') drawOutline();
+
+    ctx.drawImage(frameParrot, 0, 0, frameParrot.width, frameParrot.height);
+
+    if (styleSettings.outlineStyle === 'inside') drawOutline();
 
     ctx.drawImage(
       userImageFrames[frame % userImageFrames.length],
@@ -431,5 +441,7 @@ function drawParrotFrame(
     );
 
     ctx.restore();
+  } else {
+    ctx.drawImage(frameParrot, 0, 0, frameParrot.width, frameParrot.height);
   }
 }

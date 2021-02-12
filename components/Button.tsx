@@ -28,7 +28,6 @@ export const Button = styled.button<ButtonProps>`
   }
 
   :focus {
-    /* box-shadow: red */
     box-shadow: 0 0 0 5px ${th.color('primary-a30')};
     outline: none;
   }

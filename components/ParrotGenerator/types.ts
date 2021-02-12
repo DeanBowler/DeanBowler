@@ -7,7 +7,7 @@ export interface LayoutSettings {
 }
 
 export interface StyleSettings {
-  addOutline: boolean;
+  outlineStyle: 'inside' | 'outside' | undefined;
   matchHue: boolean;
   lighten: number;
   sharpen: number;

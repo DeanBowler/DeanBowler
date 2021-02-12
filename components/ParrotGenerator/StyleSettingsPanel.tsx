@@ -4,14 +4,20 @@ import { x } from '@xstyled/styled-components';
 import Spaced from '@/styled/Spaced';
 
 import { RangeSlider } from '@/components/RangeSlider';
-import { StyleSettings } from './types';
 import { Toggle } from '@/components/Toggle';
+import { RadioButtonGroup, RadioChoice } from '@/components/RadioButtonGroup';
+import { StyleSettings } from './types';
 
 export interface StyleSettingsPanelProps {
   className?: string;
   settings: StyleSettings;
   onSettingsChange(newSettings: Partial<StyleSettings>): void;
 }
+
+const outlineStyleChoices: readonly RadioChoice<StyleSettings['outlineStyle']>[] = [
+  { value: 'inside' },
+  { value: 'outside' },
+];
 
 export function StyleSettingsPanel({
   className,
@@ -31,15 +37,6 @@ export function StyleSettingsPanel({
       </x.h3>
       <Spaced my={2}>
         <Toggle
-          label="Outline"
-          value={settings.addOutline}
-          onClick={() =>
-            onSettingsChange({
-              addOutline: !settings.addOutline,
-            })
-          }
-        />
-        <Toggle
           label="Color"
           value={settings.matchHue}
           onClick={() =>
@@ -55,6 +52,12 @@ export function StyleSettingsPanel({
           step={0.05}
           value={settings.lighten}
           onValueChange={lighten => onSettingsChange({ lighten })}
+        />
+        <RadioButtonGroup
+          label="Outline"
+          selected={settings.outlineStyle}
+          onChange={outlineStyle => onSettingsChange({ outlineStyle })}
+          choices={outlineStyleChoices}
         />
       </Spaced>
     </x.div>
