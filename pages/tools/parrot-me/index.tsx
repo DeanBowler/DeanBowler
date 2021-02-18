@@ -365,7 +365,15 @@ export default function ParrotMe() {
   );
 }
 
-// function drawOutline(ctx: CanvasRenderingContext2D,  )
+const withTransform = (
+  ctx: CanvasRenderingContext2D,
+  transformer: (ctx: CanvasRenderingContext2D) => void,
+) => (draw: (ctx: CanvasRenderingContext2D) => void) => {
+  ctx.save();
+  transformer(ctx);
+  draw(ctx);
+  ctx.restore();
+};
 
 function drawParrotFrame(
   canvas: HTMLCanvasElement,
@@ -387,8 +395,6 @@ function drawParrotFrame(
   const frameParrot = parrotImages[frame];
   const [trackX, trackY] = frameMeta[frame].tracking;
 
-  ctx.drawImage(frameParrot, 0, 0, frameParrot.width, frameParrot.height);
-
   if (userImage && userImageFrames.length) {
     const normalisedScale = (canvas.height / userImage.height) * 0.75;
 
@@ -402,19 +408,15 @@ function drawParrotFrame(
     const offsetY =
       (trackY - (userImage.height * scale) / 2 + layoutSettings.offsetY) * verticalFlip;
 
-    ctx.save();
+    const withFaceTransforms = withTransform(ctx, ctx => {
+      ctx.translate(
+        layoutSettings.flipHorizontal ? userImage.width * scale : 0,
+        layoutSettings.flipVertical ? userImage.height * scale : 0,
+      );
+      ctx.scale(horizontalFlip, verticalFlip);
+    });
 
-    if (layoutSettings.flipHorizontal) {
-      ctx.translate(userImage.width * scale, 0);
-      ctx.scale(horizontalFlip, 1);
-    }
-
-    if (layoutSettings.flipVertical) {
-      ctx.translate(0, userImage.height * scale);
-      ctx.scale(1, verticalFlip);
-    }
-
-    const drawOutline = () => {
+    const drawOutline = (ctx: CanvasRenderingContext2D) => {
       if (outlineFrame) {
         ctx.drawImage(
           outlineFrame,
@@ -426,21 +428,21 @@ function drawParrotFrame(
       }
     };
 
-    if (styleSettings.outlineStyle === 'outside') drawOutline();
+    if (styleSettings.outlineStyle === 'outside') withFaceTransforms(drawOutline);
 
     ctx.drawImage(frameParrot, 0, 0, frameParrot.width, frameParrot.height);
 
-    if (styleSettings.outlineStyle === 'inside') drawOutline();
+    if (styleSettings.outlineStyle === 'inside') withFaceTransforms(drawOutline);
 
-    ctx.drawImage(
-      userImageFrames[frame % userImageFrames.length],
-      offsetX,
-      offsetY,
-      userImage.width * scale,
-      userImage.height * scale,
+    withFaceTransforms(ctx =>
+      ctx.drawImage(
+        userImageFrames[frame % userImageFrames.length],
+        offsetX,
+        offsetY,
+        userImage.width * scale,
+        userImage.height * scale,
+      ),
     );
-
-    ctx.restore();
   } else {
     ctx.drawImage(frameParrot, 0, 0, frameParrot.width, frameParrot.height);
   }
