@@ -18,6 +18,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
+    "incremental": true,
     "paths": {
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
