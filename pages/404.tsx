@@ -29,7 +29,7 @@ export default function IndexPage() {
         <x.div fontSize="2xl" m={5}>
           You seem to be lost
         </x.div>
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior={true}>
           <Button as="a">TAKE ME HOME</Button>
         </Link>
       </x.div>

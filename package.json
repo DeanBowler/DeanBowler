@@ -18,7 +18,7 @@
     "date-fns": "^2.16.1",
     "gif.js": "^0.2.0",
     "gray-matter": "^4.0.2",
-    "next": "12",
+    "next": "^13.0.2",
     "polished": "^4.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

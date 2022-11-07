@@ -78,7 +78,9 @@ const Header = styled.header<StyledHeaderProps>`
   }
 `;
 
-const StyledLink = styled.aBox`
+const StyledLink = styled(Link)`
+  margin: 0 ${th.space(3)};
+
   color: ${th.color('white')};
   text-decoration: none;
   opacity: 0.85;
@@ -104,23 +106,17 @@ export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
       <x.div px={{ xs: 3, sm: 4 }}>
         <DarkModeToggle />
       </x.div>
-      <x.div px={{ xs: 2, sm: 3 }}>
-        <Link href="/" passHref>
-          <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
-            About
-          </StyledLink>
-        </Link>
-        <Link href="/#experience" passHref>
-          <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
-            Experience
-          </StyledLink>
-        </Link>
+      <x.div px={{ xs: 2, sm: 3 }} fontSize={{ xs: 'lg', sm: 'xl' }}>
+        <StyledLink href="/" passHref>
+          About
+        </StyledLink>
+        <StyledLink href="/#experience" passHref>
+          Experience
+        </StyledLink>
         {process.env.NODE_ENV === 'development' && (
-          <Link href="/blog" passHref>
-            <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
-              Blog
-            </StyledLink>
-          </Link>
+          <StyledLink href="/blog" passHref>
+            Blog
+          </StyledLink>
         )}
       </x.div>
     </Header>

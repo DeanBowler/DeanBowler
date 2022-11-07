@@ -103,6 +103,7 @@ export default function PostTemplate({ post }: BlogStaticProps) {
               <x.div my={3} col={{ xs: 1, md: 2 / 3 }}>
                 <Image
                   src={post.imageUrl}
+                  alt={post.imageAlt ?? 'hero image'}
                   title={post.imageTitle}
                   layout="responsive"
                   objectFit="cover"

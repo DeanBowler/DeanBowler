@@ -9,7 +9,7 @@ interface PostPreviewProps extends PostProps {
   className?: string;
 }
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
   color: text;
 
@@ -29,13 +29,11 @@ export function PostPreview({
   return (
     <x.div className={className}>
       <Spaced my={2}>
-        <Link href={`/blog/${slug}`} passHref>
-          <StyledLink>
-            <x.h3 fontWeight="normal" fontSize={{ xs: 'xl', sm: '2xl' }} m={0}>
-              {title}
-            </x.h3>
-          </StyledLink>
-        </Link>
+        <StyledLink href={`/blog/${slug}`} passHref>
+          <x.h3 fontWeight="normal" fontSize={{ xs: 'xl', sm: '2xl' }} m={0}>
+            {title}
+          </x.h3>
+        </StyledLink>
         <x.div>{summary}</x.div>
         <x.div opacity={0.8}>{readingTime}</x.div>
         <x.div display="flex" alignItems="baseline" flexWrap="wrap">
