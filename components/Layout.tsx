@@ -140,28 +140,23 @@ export const Layout = ({
                     color="text"
                     aria-label="GitHub"
                     href="https://github.com/DeanBowler"
-                    opacity={0.7}
-                    hoverOpacity={1}
+                    opacity={{ _: 0.7, hover: 1 }}
                   >
                     <SiGithub />
                   </x.a>
                   <x.a
-                    color="text"
+                    color={{ _: 'text', hover: '#0072b1' }}
                     aria-label="LinkedIn"
                     href="https://www.linkedin.com/in/dean-bowler-875a7323"
-                    opacity={0.7}
-                    hoverOpacity={1}
-                    hoverColor="#0072b1"
+                    opacity={{ _: 0.7, hover: 1 }}
                   >
                     <SiLinkedin />
                   </x.a>
                   <x.a
-                    color="text"
+                    color={{ _: 'text', hover: '#1DA1F2' }}
                     aria-label="Twitter"
                     href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
-                    opacity={0.7}
-                    hoverOpacity={1}
-                    hoverColor="#1DA1F2"
+                    opacity={{ _: 0.7, hover: 1 }}
                   >
                     <SiTwitter />
                   </x.a>

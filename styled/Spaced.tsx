@@ -1,6 +1,6 @@
 import { space, SpaceProps } from '@xstyled/system';
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 
 const classnames = (...args: Array<string | undefined>) => args.join(' ');
 const getClassName = (el: React.ReactElement) => el.props?.className ?? '';

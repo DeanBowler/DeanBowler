@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styled, { Box, th, css } from '@xstyled/styled-components';
+import styled, { x, th, css } from '@xstyled/styled-components';
 import Link from 'next/link';
 
 import { ABBERATION_FILTER } from './SvgFilters';
@@ -19,7 +19,7 @@ interface StyledHeaderProps {
   showBackground: boolean;
 }
 
-const Header = styled.headerBox<StyledHeaderProps>`
+const Header = styled.header<StyledHeaderProps>`
   display: flex;
   justify-content: space-between;
   position: ${({ scrolledTop }) => (!scrolledTop ? 'fixed' : 'absolute')};
@@ -101,10 +101,10 @@ export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
 
   return (
     <Header {...{ scrollDirection, scrolledTop, forceHeaderBg, showBackground }}>
-      <Box px={{ xs: 3, sm: 4 }}>
+      <x.div px={{ xs: 3, sm: 4 }}>
         <DarkModeToggle />
-      </Box>
-      <Box px={{ xs: 2, sm: 3 }}>
+      </x.div>
+      <x.div px={{ xs: 2, sm: 3 }}>
         <Link href="/" passHref>
           <StyledLink fontSize={{ xs: 'lg', sm: 'xl' }} mx={3}>
             About
@@ -122,7 +122,7 @@ export function SiteHeader({ forceHeaderBg = false }: SiteHeaderProps) {
             </StyledLink>
           </Link>
         )}
-      </Box>
+      </x.div>
     </Header>
   );
 }

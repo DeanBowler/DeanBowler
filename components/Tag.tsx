@@ -5,7 +5,7 @@ interface TagProps {
   className?: string;
 }
 
-const TagContainer = styled.box`
+const TagContainer = styled.div`
   display: inline-block;
   font-size: base;
   border-radius: 5px;

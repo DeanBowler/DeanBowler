@@ -12,12 +12,11 @@ export function DarkModeToggle() {
       appearance="none"
       background="transparent"
       border="none"
-      opacity={0.6}
+      opacity={{ _: 0.6, hover: 1 }}
       color="white"
       fontSize="2xl"
-      focusOutline="none"
+      outline="none"
       cursor="pointer"
-      hoverOpacity={1}
       role="checkbox"
       aria-label="toggle dark mode"
       aria-checked={colorMode === 'dark'}

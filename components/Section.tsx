@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 
 const SectionContainer = styled.section<{ fullHeight: boolean }>`
   position: relative;

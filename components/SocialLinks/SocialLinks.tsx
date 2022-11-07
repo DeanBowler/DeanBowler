@@ -1,4 +1,4 @@
-import styled, { Box } from '@xstyled/styled-components';
+import styled, { x } from '@xstyled/styled-components';
 import React from 'react';
 import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { IconType } from 'react-icons/lib';
@@ -35,7 +35,7 @@ const SocialLink = ({ icon: SocialIcon, link, label, className }: SocialLinkProp
 );
 
 export const SocialLinks = () => (
-  <Box margin={4}>
+  <x.div margin={4}>
     <Spaced mx={1}>
       <SocialLink icon={FiGithub} label="GitHub" link="https://github.com/DeanBowler" />
       <SocialLink
@@ -49,5 +49,5 @@ export const SocialLinks = () => (
         link="https://twitter.com/SpencerBatwick"
       />
     </Spaced>
-  </Box>
+  </x.div>
 );

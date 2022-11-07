@@ -43,7 +43,7 @@ const StyledThumb = styled.div<StyledToggleProps>`
   transition: left 300ms cubic-bezier(0.65, 0.05, 0.36, 1), opacity 300ms ease-in-out;
 `;
 
-const ToggleContainer = styled.labelBox`
+const ToggleContainer = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;

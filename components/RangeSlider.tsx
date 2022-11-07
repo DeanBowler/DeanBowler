@@ -1,6 +1,6 @@
 import React from 'react';
 import { x, th } from '@xstyled/styled-components';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 
 export interface RangeSliderProps {
   value: number;

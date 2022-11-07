@@ -1,4 +1,4 @@
-import styled, { Box, x } from '@xstyled/styled-components';
+import styled, { x } from '@xstyled/styled-components';
 import Image from 'next/image';
 
 import { SocialLinks } from '@/components/SocialLinks';
@@ -42,8 +42,7 @@ export const MainProfile = () => {
                 loading="eager"
               />
             </ProfileImageContainer>
-            <Box
-              as="h1"
+            <x.h1
               fontSize={{ xs: '4xl', sm: '6xl' }}
               fontWeight="lighter"
               margin={0}
@@ -51,10 +50,10 @@ export const MainProfile = () => {
               lineHeight="solid"
             >
               Dean Bowler
-            </Box>
-            <Box fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
+            </x.h1>
+            <x.div fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
               Web Developer
-            </Box>
+            </x.div>
             <SocialLinks />
           </x.div>
           <x.div m={{ xs: 3, sm: 4 }} minHeight={3}>

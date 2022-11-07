@@ -1,6 +1,6 @@
 import { gradientShift } from '@/styled/keyframes';
 import { th } from '@xstyled/system';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 import { Section } from './Section';
 
 const BACKGROUND_GRADIENT_ONE = '#31364e';

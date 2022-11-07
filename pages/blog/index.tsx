@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, x } from '@xstyled/styled-components';
+import { x } from '@xstyled/styled-components';
 import { HeadingSection } from '@/components/HeadingSection';
 import { Layout } from '@/components/Layout';
 import { getAllPosts, PostProps } from '@/lib/posts';
@@ -15,31 +15,31 @@ export default function BlogIndex({ allPosts }: BlogIndexProps) {
   return (
     <Layout title="Blog | Dean Bowler">
       <HeadingSection>
-        <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
-          <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
+        <x.div row justifyContent={{ sm: 'center' }} my={4} mx={4}>
+          <x.div col={{ sm: 3 / 4, md: 2 / 3 }}>
             <x.h1 fontWeight="lighter" fontSize={{ xs: '5xl', sm: '6xl' }}>
               Blog
             </x.h1>
-          </Box>
-        </Box>
+          </x.div>
+        </x.div>
       </HeadingSection>
-      <Box row justifyContent={{ sm: 'center' }} my={4} mx={4}>
-        <Box col={{ sm: 3 / 4, md: 2 / 3 }}>
-          <Box
+      <x.div row justifyContent={{ sm: 'center' }} my={4} mx={4}>
+        <x.div col={{ sm: 3 / 4, md: 2 / 3 }}>
+          <x.h2
             as="h2"
             fontWeight="normal"
             fontSize={{ xs: '3xl', sm: '4xl' }}
             color="primary"
           >
             Posts
-          </Box>
+          </x.h2>
           <Spaced my={4}>
             {allPosts?.map(p => (
               <PostPreview key={p.slug} {...p} />
             ))}
           </Spaced>
-        </Box>
-      </Box>
+        </x.div>
+      </x.div>
     </Layout>
   );
 }

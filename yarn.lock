@@ -74,7 +74,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.7.tgz#fee7b39fe809d0e73e5b25eecaf5780ef3d73056"
   integrity sha512-oWR02Ubp4xTLCAqPRiNIuMVgNO5Aif/xpXtabhzW2HWUD47XJsAB4Zd/Rg30+XeQA3juXigV7hlquOTmwqLiwg==
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -528,39 +528,35 @@
     "@typescript-eslint/types" "5.42.0"
     eslint-visitor-keys "^3.3.0"
 
-"@xstyled/core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-2.0.0.tgz#f54f8e0144e043368406212ee8db26b480b309cf"
-  integrity sha512-DG0sbwMUhGqVMzDAmLO6JaIaP3o22v9NA/JtO1qTVlTjbVkprBT/D9fT3qggQaU60NS96Ogyb8Qkm3Uck80ZcQ==
+"@xstyled/core@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-3.7.0.tgz#b6ea2c4b059ca9d808ffdf3800406eaddd2a9491"
+  integrity sha512-4U7PnDf4DnCWPwLRpyyCocQXod5T3Ap+h0nIwdJyZtHB35sjUXsEO8Cp8wP9lqbn/bnWkqhaL79StjUEmIIvrQ==
   dependencies:
-    "@babel/runtime" "^7.11.2"
-    "@xstyled/system" "^2.0.0"
+    "@xstyled/system" "^3.7.0"
+    "@xstyled/util" "^3.7.0"
 
-"@xstyled/styled-components@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-2.0.0.tgz#3a4a1b14fd62c75a49a124bb00f283c2553b6a22"
-  integrity sha512-RZN+zFcLct/q6QZOHdfZ6U9SVlSYGtBqRFDUzeHx/TX/UczX3/uA+ZEMDe9IDb2JbkELfKWvKMJlUdSAfNJ4ZQ==
+"@xstyled/styled-components@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-3.7.0.tgz#28c9ca3ee675fa320faeccbb4c20116b0c98ec25"
+  integrity sha512-5zUmlC6v3wvBPHrhFUawu0FBYwHzGTFlGZYrZob54QMu9Sv1tFjgMVwGCp4uOLK9kVrRVyTVwWXejKXpyeGFVg==
   dependencies:
-    "@babel/runtime" "^7.11.2"
-    "@xstyled/core" "^2.0.0"
-    "@xstyled/system" "^2.0.0"
-    "@xstyled/util" "^2.0.0"
+    "@xstyled/core" "^3.7.0"
+    "@xstyled/system" "^3.7.0"
+    "@xstyled/util" "^3.7.0"
 
-"@xstyled/system@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-2.0.0.tgz#7a16716a7acd3d5a90d29868d673a5f8e255be89"
-  integrity sha512-dQnlX0m6oMUd+P7FfR82HmOjhl+mLAnPb9xwsyLozRalgtqXwMkLnmeb9KeClCaWRUyLvzqQvaWgnLC6G6wKMA==
+"@xstyled/system@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-3.7.0.tgz#ed2c4f87c62eead93e112e71147fd816699759a3"
+  integrity sha512-110+yxP3zJSCr6Qyy89GMvaKhrR/3ezVyAGVOYsyUBz2u0+p3uAJ7uHKro2Pcwbt7V6oc7D5nTQVaOLasKMPCg==
   dependencies:
-    "@babel/runtime" "^7.11.2"
-    "@xstyled/util" "^2.0.0"
-    csstype "^3.0.3 "
+    "@xstyled/util" "^3.7.0"
+    csstype "^3.1.1"
 
-"@xstyled/util@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-2.0.0.tgz#009c5b629ce3553b13178ffa6b99ab32d5fd2478"
-  integrity sha512-OFOflJVEEBYppcgN4Seff4x4s61S8f5oHX4HBZDnq6tim/XqvRDHjbac5A7P8fPoa9v5PBrJw2JrVyMsTGCiZQ==
-  dependencies:
-    "@babel/runtime" "^7.11.2"
+"@xstyled/util@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-3.7.0.tgz#513c045dda0847d43b39612b6d36cc38b507e82d"
+  integrity sha512-rYtXRcNh+pgRxGnciP0Mas21mpyOzcCTVy7w9uIByQk3EytwBQjDiN6wCasXibkw49Urfti5efsklRbCl5QZww==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -834,10 +830,15 @@ css-to-react-native@^3.0.0:
     css-color-keywords "^1.0.0"
     postcss-value-parser "^4.0.2"
 
-csstype@^3.0.2, "csstype@^3.0.3 ":
+csstype@^3.0.2:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.5.tgz#7fdec6a28a67ae18647c51668a9ff95bb2fa7bb8"
   integrity sha512-uVDi8LpBUKQj6sdxNaTetL6FpeCqTjOvAQuQUa/qAqq8oOd4ivkbhgnqayl0dnPal8Tb/yB1tF+gOvCBiicaiQ==
+
+csstype@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
+  integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
 date-fns@^2.16.1:
   version "2.16.1"

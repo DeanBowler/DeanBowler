@@ -12,8 +12,8 @@
   "dependencies": {
     "@pencil.js/canvas-gif-encoder": "^1.1.2",
     "@tanstack/react-query": "^4.14.5",
-    "@xstyled/styled-components": "^2.0.0",
-    "@xstyled/system": "^2.0.0",
+    "@xstyled/styled-components": "^3.7.0",
+    "@xstyled/system": "^3.7.0",
     "color-convert": "^2.0.1",
     "date-fns": "^2.16.1",
     "gif.js": "^0.2.0",
