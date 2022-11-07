@@ -1,4 +1,4 @@
-import { space, SpaceProps } from '@xstyled/system';
+import { space } from '@xstyled/system';
 import React from 'react';
 import styled from '@xstyled/styled-components';
 
@@ -27,8 +27,6 @@ export const StyledChildren = ({
   return <>{styledChildren}</>;
 };
 
-const Spaced: React.FunctionComponent<StyledChildrenProps & SpaceProps> = styled(
-  StyledChildren,
-)(space);
+const Spaced = styled(StyledChildren)(space);
 
 export default Spaced;
