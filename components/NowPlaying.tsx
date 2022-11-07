@@ -1,5 +1,5 @@
 import { x } from '@xstyled/styled-components';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 import { NowPlaying as NowPlayingResponse } from '@/lib/spotify';
 
@@ -14,7 +14,7 @@ interface NowPlayingProps {
 }
 
 export function NowPlaying({ className }: NowPlayingProps) {
-  const { data, isFetched } = useQuery('spotify-now-playing', getNowPlaying, {
+  const { data, isFetched } = useQuery(['spotify', 'now-playing'], getNowPlaying, {
     refetchInterval: 60000,
     refetchOnWindowFocus: false,
   });

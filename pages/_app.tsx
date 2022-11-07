@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { ColorModeProvider, ThemeProvider } from '@xstyled/styled-components';
 import theme from '@/styled/theme';
 import { SvgFilterDefinitions } from '@/components/SvgFilters';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
