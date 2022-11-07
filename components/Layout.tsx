@@ -8,7 +8,6 @@ import styled, {
 } from '@xstyled/styled-components';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
-import Spaced from '@/styled/Spaced';
 import { Seo } from '@/components/Seo';
 import { SiteHeader } from '@/components/SiteHeader';
 import { NowPlaying } from '@/components/NowPlaying';
@@ -135,32 +134,33 @@ export const Layout = ({
             >
               <x.span>Dean Bowler © 2020</x.span>
               <x.div fontSize="2xl">
-                <Spaced mx={2}>
-                  <x.a
-                    color="text"
-                    aria-label="GitHub"
-                    href="https://github.com/DeanBowler"
-                    opacity={{ _: 0.7, hover: 1 }}
-                  >
-                    <SiGithub />
-                  </x.a>
-                  <x.a
-                    color={{ _: 'text', hover: '#0072b1' }}
-                    aria-label="LinkedIn"
-                    href="https://www.linkedin.com/in/dean-bowler-875a7323"
-                    opacity={{ _: 0.7, hover: 1 }}
-                  >
-                    <SiLinkedin />
-                  </x.a>
-                  <x.a
-                    color={{ _: 'text', hover: '#1DA1F2' }}
-                    aria-label="Twitter"
-                    href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
-                    opacity={{ _: 0.7, hover: 1 }}
-                  >
-                    <SiTwitter />
-                  </x.a>
-                </Spaced>
+                <x.a
+                  color="text"
+                  aria-label="GitHub"
+                  href="https://github.com/DeanBowler"
+                  opacity={{ _: 0.7, hover: 1 }}
+                  mx={2}
+                >
+                  <SiGithub />
+                </x.a>
+                <x.a
+                  color={{ _: 'text', hover: '#0072b1' }}
+                  aria-label="LinkedIn"
+                  href="https://www.linkedin.com/in/dean-bowler-875a7323"
+                  opacity={{ _: 0.7, hover: 1 }}
+                  mx={2}
+                >
+                  <SiLinkedin />
+                </x.a>
+                <x.a
+                  color={{ _: 'text', hover: '#1DA1F2' }}
+                  aria-label="Twitter"
+                  href="https://twitter.com/SpencerBatwickhttps://www.linkedin.com/in/dean-bowler-875a7323"
+                  opacity={{ _: 0.7, hover: 1 }}
+                  mx={2}
+                >
+                  <SiTwitter />
+                </x.a>
               </x.div>
             </x.div>
           </x.footer>
