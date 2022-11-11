@@ -13,7 +13,7 @@ export const SvgFilterDefinitions = () => (
             0 0 0 1 0"
         />
         <feOffset in="red_" dx="2" dy="-2" result="red">
-          <animate
+          {/* <animate
             attributeName="dy"
             values="-3;-0"
             dur="500ms"
@@ -24,7 +24,7 @@ export const SvgFilterDefinitions = () => (
             values="3;0;3"
             dur="500ms"
             repeatCount="indefinite"
-          />
+          /> */}
         </feOffset>
         <feColorMatrix
           type="matrix"
@@ -36,13 +36,13 @@ export const SvgFilterDefinitions = () => (
             0 0 0 1 0"
         />
         <feOffset in="blue_" dx="-2" dy="2" result="blue" dur="1s">
-          <animate
+          {/* <animate
             attributeName="dx"
             values="-3;-0"
             dur="500ms"
             repeatCount="indefinite"
           />
-          <animate attributeName="dy" values="3;0" dur="500ms" repeatCount="indefinite" />
+          <animate attributeName="dy" values="3;0" dur="500ms" repeatCount="indefinite" /> */}
         </feOffset>
         <feBlend mode="screen" in="red" in2="blue" />
       </filter>

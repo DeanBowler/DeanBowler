@@ -12,7 +12,7 @@ interface JobExperienceProps {
 
 export function JobExperience({ employer, title, dates, children }: JobExperienceProps) {
   return (
-    <x.div mb={6} row mx={-2}>
+    <x.div mt={1} mb={5} row mx={-2}>
       <x.h3
         col={{ xs: 1, md: 1 / 3 }}
         mt={0}
@@ -28,7 +28,7 @@ export function JobExperience({ employer, title, dates, children }: JobExperienc
           {dates}
         </x.div>
       </x.h3>
-      <x.div col={{ xs: 1, md: 2 / 3 }} px={2}>
+      <x.div fontSize="medium" col={{ xs: 1, md: 2 / 3 }} px={2} lineHeight="tightCopy">
         {children}
       </x.div>
     </x.div>
@@ -66,35 +66,101 @@ export function Experience() {
           borderColor="primary"
           pl={3}
           py={2}
-          fontSize={{ xs: 'lg', md: 'xl' }}
+          fontSize={{ xs: 'md', md: 'lg' }}
         >
           Starting in the murky depths of C/C++ in a codebase roughly ported from Fortran,
-          I spent the last decade finding my focus and passion in helping businesses
-          create compelling user experiences and interactions.
+          I&apos;ve spent the last decade honing my skills in the web development space,
+          helping businesses and colleagues get to grips with the latest technologies and
+          best practices.
         </x.p>
         <JobExperience
           employer="Oakbrook Finance"
-          title="Senior Frontend Developer"
-          dates="2019 - 2021"
+          title="Technical Architect"
+          dates="2021 - Present"
         >
-          Frontend focused, full stack development of personal loans brochureware, loan
-          application frontend/infrastructure as well as internal support and operations
-          tooling; built with react, asp.net RESTful APIs and NServiceBus cross-service
-          orchestration.
+          Returning to Oakbrook Finance with the role of Technical Architect, I have
+          largely been responsible for developing, documenting and reviewing contributions
+          towards our target architecture
           <x.div my={1}>
             <Spaced mr={2} mt={2}>
               <Tag>React</Tag>
               <Tag>TypeScript</Tag>
               <Tag>Kubernetes</Tag>
               <Tag>C#</Tag>
-              <Tag>NServiceBus</Tag>
+              <Tag>Domain Driven Design</Tag>
             </Spaced>
           </x.div>
           <ul>
             <li>
-              Championed and directed the creation of an inhouse, thoroughly tested, react
-              component library. As well as reducing our code duplication this has enabled
-              numerous projects to quickly get off the ground and into production.
+              Strategised and implemented frameworks to bring our in-house design
+              language/system in line with our React implementation. This was particularly
+              challenging given the unique requirements, where 3rd party design systems
+              are a poor fit. Following the initial work I have mentored and upskilled
+              developers in how to contribute, as well as ensuring design and tech are
+              talking the same language.
+            </li>
+            <li>
+              Migrated from the Auth0 authentication platform to Azure B2C for a cost
+              saving of circa £90,000 pa.
+            </li>
+            <li>
+              Introduced usage of TypeScript to the business, running training sessions to
+              upskill developers and sell the benefits of static type-checking.
+            </li>
+            <li>
+              Lead an initiative to onboard Datadog monitoring and instrumentation for
+              system observability.
+            </li>
+          </ul>
+        </JobExperience>
+        <JobExperience
+          employer="Boomin"
+          title="Senior Frontend Developer"
+          dates="2020 - 2021"
+        >
+          Frontend focussed, fullstack development for a Rightmove challenger property
+          portal. This involved working with React, .NET core, Azure Cosmos DB and Azure
+          Service Bus. Utilising change Cosmos DB feeds to work within an event sourcing
+          architecture was particularly interesting.
+          <x.div my={1}>
+            <Spaced mr={2} mt={2}>
+              <Tag>React</Tag>
+              <Tag>TypeScript</Tag>
+              <Tag>Kubernetes</Tag>
+              <Tag>C#</Tag>
+              <Tag>Cosmos DB</Tag>
+            </Spaced>
+          </x.div>
+          <ul>
+            <li>
+              Readily adapted to numerous secondments, utilising my skillset to accelerate
+              delivery timelines.
+            </li>
+            <li>
+              Designed and implemented valuable internal tooling both towards day-to-day
+              business processes and system diagnosis / remediation.
+            </li>
+          </ul>
+        </JobExperience>
+        <JobExperience employer="Oakbrook Finance" title="Tech Lead" dates="2019 - 2020">
+          Technical leadership & development of personal loans brochureware, loan
+          application frontend/infrastructure as well as internal support and operations
+          tooling; built with React, asp.net RESTful APIs and NServiceBus.
+          <x.div my={1}>
+            <Spaced mr={2} mt={2}>
+              <Tag>React</Tag>
+              <Tag>TypeScript</Tag>
+              <Tag>Kubernetes</Tag>
+              <Tag>MongoDB</Tag>
+              <Tag>C#</Tag>
+              <Tag>Google PubSub</Tag>
+            </Spaced>
+          </x.div>
+          <ul>
+            <li>
+              Leadership of a mixed inhouse and contract developer team, orchestrating and
+              facilitating communication between both key stakeholders and other
+              development teams
             </li>
             <li>
               Lead a frontend “chapter”, a cross-team collective of developers, with the

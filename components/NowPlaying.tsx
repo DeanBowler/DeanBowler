@@ -20,7 +20,7 @@ export function NowPlaying({ className }: NowPlayingProps) {
   });
 
   return (
-    <x.div minHeight={3} row className={className}>
+    <x.div minHeight={3} row className={className} fontFamily="heading">
       {isFetched && data && (
         <x.div row alignItems="flex-end">
           <x.div w={32} mr={2}>

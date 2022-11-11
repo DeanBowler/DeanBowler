@@ -8,7 +8,7 @@ import styled, {
 } from '@xstyled/styled-components';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
-import { Seo } from '@/components/Seo';
+import { Seo, SeoProps } from '@/components/Seo';
 import { SiteHeader } from '@/components/SiteHeader';
 import { NowPlaying } from '@/components/NowPlaying';
 
@@ -42,7 +42,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   li {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: heading;
   }
 `;
 
@@ -73,36 +77,35 @@ const Container = styled.div<{ background: string }>`
 
   ul {
     padding: 0px;
+    padding-left: 24;
     margin: 0px;
-    list-style: none;
   }
 
   ul li {
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
   }
 
-  ul li::before {
-    content: '▹';
-    position: absolute;
-    left: 0px;
-    font-size: 3xl;
-    color: primary;
+  ul li::marker {
+    color: text-a50;
+    font-size: x-large;
   }
 `;
 
 interface LayoutProps {
   children?: ReactNode;
   title?: string;
+  seo?: SeoProps;
   forceHeaderBg?: 'dark' | 'default' | boolean;
   includeFooter?: boolean;
 }
+
 export const Layout = ({
   children,
   title = 'Dean Bowler',
   forceHeaderBg = false,
   includeFooter = true,
+  seo,
 }: LayoutProps) => {
   const [colorMode] = useColorMode();
 
@@ -116,11 +119,11 @@ export const Layout = ({
         <Head>
           <title>{title}</title>
         </Head>
-        <Seo title={title} />
+        <Seo title={title} {...seo} />
         <SiteHeader forceHeaderBg={shouldForceHeaderBg} />
         {children}
         {includeFooter && (
-          <x.footer mt={5}>
+          <x.footer mt={5} fontFamily="heading">
             <x.div row my={3} mx={{ xs: 4, md: 6 }} justifyContent="center">
               <NowPlaying />
             </x.div>

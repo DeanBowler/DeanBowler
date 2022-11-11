@@ -82,8 +82,9 @@ const StyledLink = styled(Link)`
   margin: 0 ${th.space(3)};
 
   color: ${th.color('white')};
+  font-family: heading;
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 0.875;
 
   :hover {
     opacity: 1;

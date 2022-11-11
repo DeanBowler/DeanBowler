@@ -25,6 +25,7 @@ export interface AppTheme extends Theme {
   colors: Colors & { modes: Record<Exclude<ColorMode, 'default'>, Partial<Colors>> };
   fonts: {
     normal: string;
+    heading: string;
     cursive: string;
     monospace: string;
   };
@@ -58,12 +59,13 @@ const theme: Partial<AppTheme> = {
         text: 'hsl(180 8% 92%)',
         'text-a30': 'hsla(180, 8%, 92%, 0.26)',
         'text-a50': 'hsla(180, 8%, 92%, 0.5)',
-        background: 'hsl(235deg 10% 20%)',
+        background: 'hsl(235deg 10% 18%)',
       },
     },
   },
   fonts: {
-    normal: 'Raleway',
+    normal: 'Lato',
+    heading: 'Raleway',
     cursive: 'Pacifico',
     monospace: 'monospace',
   },
@@ -77,6 +79,7 @@ const theme: Partial<AppTheme> = {
     normal: 'normal',
     solid: '1',
     title: '1.25',
+    tightCopy: '1.5',
     copy: '1.7',
   },
   sizes: [

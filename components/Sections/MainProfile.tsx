@@ -51,8 +51,12 @@ export const MainProfile = () => {
             >
               Dean Bowler
             </x.h1>
-            <x.div fontSize={{ xs: 'xl', sm: '2xl' }} fontWeight="normal">
-              Web Developer
+            <x.div
+              fontSize={{ xs: 'xl', sm: '2xl' }}
+              fontFamily="heading"
+              fontWeight="normal"
+            >
+              Software Engineer &amp; Tech Leader
             </x.div>
             <SocialLinks />
           </x.div>
