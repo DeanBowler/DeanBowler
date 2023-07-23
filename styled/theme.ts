@@ -64,7 +64,7 @@ const theme: Partial<AppTheme> = {
     },
   },
   fonts: {
-    normal: 'Lato',
+    normal: 'Quicksand',
     heading: 'Raleway',
     cursive: 'Pacifico',
     monospace: 'monospace',

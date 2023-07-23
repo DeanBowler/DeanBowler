@@ -2,6 +2,7 @@ import React from 'react';
 
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/react';
 
 import { ColorModeProvider, ThemeProvider } from '@xstyled/styled-components';
 import theme from '@/styled/theme';
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <SvgFilterDefinitions />
         </ThemeProvider>
       </QueryClientProvider>
+      <Analytics />
     </>
   );
 }
