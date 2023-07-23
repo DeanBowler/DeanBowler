@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0;
     font-size: 16px;
+    font-weight: normal;
     line-height: 1.3;
     background-color: background;
   }

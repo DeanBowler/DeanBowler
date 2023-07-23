@@ -12,7 +12,7 @@ interface JobExperienceProps {
 
 export function JobExperience({ employer, title, dates, children }: JobExperienceProps) {
   return (
-    <x.div mt={1} mb={5} row mx={-2}>
+    <x.div mt={1} mb={5} row mx={-2} py={4} px={3}>
       <x.h3
         col={{ xs: 1, md: 1 / 3 }}
         mt={0}
@@ -24,11 +24,11 @@ export function JobExperience({ employer, title, dates, children }: JobExperienc
         <x.div fontSize={{ xs: 'lg', md: 'xl' }} color="primary">
           {title}
         </x.div>
-        <x.div fontSize={{ xs: 'sm', md: 'base' }} opacity="0.75">
+        <x.div fontSize={{ xs: 'sm', md: 'md' }} opacity="0.75">
           {dates}
         </x.div>
       </x.h3>
-      <x.div fontSize="medium" col={{ xs: 1, md: 2 / 3 }} px={2} lineHeight="tightCopy">
+      <x.div fontSize="md" col={{ xs: 1, md: 2 / 3 }} px={2} lineHeight="tightCopy">
         {children}
       </x.div>
     </x.div>

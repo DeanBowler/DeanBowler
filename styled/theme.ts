@@ -8,6 +8,7 @@ interface Colors {
   'primary-a20': string;
   'primary-a30': string;
   'primary-a50': string;
+  'primary-a80': string;
   secondary: string;
   white: string;
   black: string;
@@ -46,25 +47,27 @@ const theme: Partial<AppTheme> = {
     'primary-a20': 'hsla(150, 40%, 50%, 0.2)',
     'primary-a30': 'hsla(150, 40%, 50%, 0.3)',
     'primary-a50': 'hsla(150, 40%, 50%, 0.5)',
+    'primary-a80': 'hsla(150, 40%, 50%, 0.8)',
     secondary: 'hsl(300, 20%, 55%)',
     white: 'hsl(180deg 10% 99%)',
     black: '#333333',
-    text: 'hsl(0,0%,5%)',
-    'text-a30': 'hsla(0,0%,0%, 0.26)',
-    'text-a50': 'hsla(0,0%,0%, 0.5)',
-    background: 'hsl(180deg 10% 99%)',
+    text: 'hsl(235, 50%, 5%)',
+    'text-a30': 'hsla(235, 20%, 10%, 0.26)',
+    'text-a50': 'hsla(235, 20%, 10%, 0.5)',
+    background: 'hsl(180deg 10% 99.6%)',
     modes: {
       dark: {
         primary: 'hsl(150, 40%, 50%)',
         text: 'hsl(180 8% 92%)',
         'text-a30': 'hsla(180, 8%, 92%, 0.26)',
         'text-a50': 'hsla(180, 8%, 92%, 0.5)',
-        background: 'hsl(235deg 10% 18%)',
+        background: 'hsl(235deg 15% 16%)',
       },
     },
   },
   fonts: {
-    normal: 'Quicksand',
+    normal:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
     heading: 'Raleway',
     cursive: 'Pacifico',
     monospace: 'monospace',
@@ -74,6 +77,9 @@ const theme: Partial<AppTheme> = {
     light: 200,
     normal: 400,
     heavy: 700,
+  },
+  fontSizes: {
+    ...defaultTheme.fontSizes,
   },
   lineHeights: {
     normal: 'normal',
